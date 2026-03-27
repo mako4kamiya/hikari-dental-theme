@@ -21,3 +21,15 @@ jobs:
       uses: webfactory/ssh-agent@v0.9.0
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Add server to known_hosts
+      run: |
+        ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+    
+    - name: Sync Theme Directory
+      run: |
+        rsync -avz --delete \
+        --exclude='.github/workflows/deploy.yml' \
+        --exclude='readme.txt' \
+        ./ \
+        ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.THEME_PATH }}
