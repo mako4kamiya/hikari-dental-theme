@@ -37,6 +37,6 @@ jobs:
         rsync -avz \
         --delete \
         --exclude='.github/workflows/deploy.yml' \
-        --exclude='.github/workflows/README.md' \
+        --exclude='README.md' \
         ./ \
         ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/${{ secrets.THEME_PATH }}
