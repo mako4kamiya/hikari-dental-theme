@@ -49,8 +49,8 @@ if ( ! function_exists( 'HikariDentalTheme_setup' ) ) :
 		 * Add support for two custom navigation menus.
 		 */
 		register_nav_menus( array(
-			'primary'   => __( 'Primary Menu', 'HikariDentalTheme' ),
-			'secondary' => __( 'Secondary Menu', 'HikariDentalTheme' ),
+			'header-menu'   => __( 'Header Menu', 'HikariDentalTheme' ),
+			'footer-menu' => __( 'Footer Menu', 'HikariDentalTheme' ),
 		) );
 
 		/**
