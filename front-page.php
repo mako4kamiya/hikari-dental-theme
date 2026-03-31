@@ -5,6 +5,6 @@
         <title>Hikari Dental Clinic</title>
     </head>
     <body>
-        
+        <?php wp_nav_menu() ?>
     </body>
 </html>
