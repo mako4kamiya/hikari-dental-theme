@@ -1,0 +1,11 @@
+:root {
+  --dark-mode-background: #131E3D;
+  --dark-mode-font: #F4F1EC;
+  --base-spacing: 16px;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
