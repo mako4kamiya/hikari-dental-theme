@@ -6,20 +6,22 @@
         <?php wp_head( ); ?>
     </head>
     <body>
-        <div id="Header" class="header">
-            <?php the_custom_logo(); ?>
-            <?php
-            wp_nav_menu(
-                array(
-                    'menu' => 'header-menu',
-                    'container' => 'nav',
-                    'container_class' => 'header-nav',
-                    'container_id' => 'HeaderNav',
-                    'menu_class' => 'header-menu',
-                    'menu_id' => 'HeaderMenu',
-                    'fallback_cb' => false,
-                    'theme_location' => 'header-menu'
-                )
-            );
-            ?>
-        </div>
+        <header>
+            <div>
+                <?php the_custom_logo(); ?>
+                <?php
+                wp_nav_menu(
+                    array(
+                        'menu' => 'header-menu',
+                        'container' => 'nav',
+                        'container_class' => 'header-nav',
+                        'container_id' => 'HeaderNav',
+                        'menu_class' => 'header-menu',
+                        'menu_id' => 'HeaderMenu',
+                        'fallback_cb' => false,
+                        'theme_location' => 'header-menu'
+                    )
+                );
+                ?>
+            </div>
+        </header>
