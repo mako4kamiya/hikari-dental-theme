@@ -18,6 +18,7 @@
 		function my_split_styles() {
 			wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/main.css');
 			wp_enqueue_style('header-style', get_template_directory_uri() . '/assets/css/header.css');
+			wp_enqueue_style('front-page-style', get_template_directory_uri() . '/assets/css/front-page.css');
 		}
 	endif;
 	add_action('wp_enqueue_scripts', 'my_split_styles');

@@ -1,0 +1,13 @@
+.min-h-screen {
+    min-height: calc(100vh - 64px);
+}
+.container {
+    padding: 0 64px;
+}
+div#MainVisual {
+    background-image: url("../images/mainvisual-bg.jpg");
+    background-size: cover;
+    .main_visual_container {
+        padding: 0 112px;
+    }
+}
