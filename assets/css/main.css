@@ -1,3 +1,19 @@
+/* 共通の定義 */
+* {
+    box-sizing: border-box;
+}
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, blockquote, figure {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Libre Baskerville", serif;
+    color: var(--light-mode-font1);
+}
+input, button, textarea, select {
+    color: inherit;
+}
+
 :root {
 /* 色の定義 */
     --neutral-light: #F4F1EC;
@@ -31,17 +47,6 @@
     --light-mode-button-active: var(--primitive-gold-l71);
     --light-mode-button-focus1: var(--neutral-light);
     --light-mode-button-focus2: var(--neutral-dark);
-}
-* {
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-    font-family: "Libre Baskerville", serif;
-    color: var(--light-mode-font1);
-}
-input, button, textarea, select {
-    color: inherit;
 }
 
 /* フォントに関するスタイル */

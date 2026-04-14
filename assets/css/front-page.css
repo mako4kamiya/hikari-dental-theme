@@ -28,6 +28,9 @@ div#MainVisual {
             grid-template-columns: 1fr 1fr;
             align-items: center;
             div.main_visual-left {
+                a.logo-mainvisual {
+                    display: inline-flex;
+                }
                 p.text-style-p-regular {
                     color: var(--dark-mode-font1);
                 }
