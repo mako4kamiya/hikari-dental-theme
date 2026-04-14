@@ -1,6 +1,7 @@
 header {
     position: fixed;
     width: 100%;
+    z-index: 10;
     div {
         background-color: var(--dark-mode-background);
         height: 64px;

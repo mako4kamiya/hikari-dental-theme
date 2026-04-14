@@ -1,4 +1,6 @@
 div#MainVisual {
+    position: relative;
+    z-index: 100;
     &::before {
         content: "";
         position: absolute;
