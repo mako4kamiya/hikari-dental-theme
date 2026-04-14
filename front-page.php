@@ -7,7 +7,7 @@
                 <div class="grid-container">
                     <div class="main_visual-left">
                         <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/hikari-dental-logo-mainvisual.png" alt="ひかりデンタルクリニックのロゴメインビジュアル"></a>
-                        <p class="text-style-main-copy">安心と信頼の 歯科医療</p>
+                        <p class="text-style-main-copy">安心と信頼の<br>歯科医療</p>
                         <p class="text-style-p-regular">一人ひとりのお悩みに真摯に向き合い、 安心して通い続けられる歯科クリニックを目指しています。</p>
                         <button type="button">クリニック紹介を見る</button>
                     </div>

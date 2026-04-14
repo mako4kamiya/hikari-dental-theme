@@ -17,7 +17,7 @@ header {
                 li {
                     padding: 0 16px;
                     a {
-                        color: var(--dark-mode-font);
+                        color: var(--dark-mode-font1);
                         text-decoration: unset;
                         &:hover {
                             text-decoration: underline;

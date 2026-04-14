@@ -1,12 +1,3 @@
-.min-h-screen {
-    /* min-height: calc(100vh - 64px); */
-    min-height: 100vh;
-}
-.container {
-    padding: 0 64px;
-    position: relative;
-    z-index: 1;
-}
 div#MainVisual {
     &::before {
         content: "";
@@ -26,12 +17,19 @@ div#MainVisual {
         right: 0;
         left: 0;
         bottom: 0;
-        background-color: rgba(19, 30, 61, 50%);
+        background-color: rgba(19, 30, 61, 70%);
     }
     .main_visual_container {
         padding: 0 112px;
-        &>div.grid-container {
+        display: flex;
+        div.grid-container {
             grid-template-columns: 1fr 1fr;
+            align-items: center;
+            div.main_visual-left {
+                p.text-style-p-regular {
+                    color: var(--dark-mode-font1);
+                }
+            }
         }
     }
 }
