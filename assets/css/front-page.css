@@ -26,10 +26,16 @@ div#MainVisual {
         display: flex;
         div.grid-container {
             grid-template-columns: 1fr 1fr;
-            align-items: center;
             div.main_visual-left {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                row-gap: 40px;
                 a.logo-mainvisual {
                     display: inline-flex;
+                    position: absolute;
+                    top: 10%;
                 }
                 p.text-style-p-regular {
                     color: var(--dark-mode-font1);
