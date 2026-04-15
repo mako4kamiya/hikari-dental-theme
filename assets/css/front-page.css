@@ -1,9 +1,7 @@
 div#MainVisual {
-    height: 100vh;
+    height: 100vh; /* フォールバック */
     height: 100svh;
     display: flex;
-    position: relative;
-    z-index: 100;
     &::before {
         content: "";
         position: absolute;
@@ -11,7 +9,6 @@ div#MainVisual {
         right: 0;
         left: 0;
         bottom: 0;
-        z-index: -1;
         background-image: url("../images/mainvisual-bg.jpg");
         background-size: cover;
     }
