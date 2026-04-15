@@ -168,20 +168,22 @@ input, button, textarea, select {
         outline: 2px solid var(--light-mode-button-focus-outline);
     }
 }
-
-/* 構造に関するスタイル */
+.min-h-screen {
+    min-height: calc(100vh - 64px); /* フォールバック */
+    min-height: calc(100svh - 64px);
+    display: flex;
+}
 .container {
     padding: 0 64px;
     z-index: 1;
     display: flex;
 }
+.inner_container {
+    margin-top: 64px;
+    padding: 80px 0;
+}
 .grid-container {
     display: grid;
-}
-.min-h-screen {
-    min-height: 100vh; /* フォールバック */
-    min-height: 100svh;
-    display: flex;
 }
 
 /* コンポーネント */

@@ -1,4 +1,7 @@
 div#MainVisual {
+    height: 100vh;
+    height: 100svh;
+    display: flex;
     position: relative;
     z-index: 100;
     &::before {
@@ -41,6 +44,14 @@ div#MainVisual {
                     color: var(--dark-mode-font1);
                 }
             }
+        }
+    }
+}
+div#AboutUs {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+        .about_us-right img {
+            width: 100%;
         }
     }
 }

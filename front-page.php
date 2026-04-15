@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main>
-    <div id="MainVisual" class="min-h-screen dark-mode">
+    <div id="MainVisual" class="dark-mode">
         <div class="container">
             <div class="main_visual_container">
                 <div class="grid-container">
@@ -17,26 +17,39 @@
     </div>
     <div id="AboutUs" class="min-h-screen">
         <div class="container">
+            <div class="inner_container">
+                <div class="grid-container">
+                    <div class="about_us-left"></div>
+                    <div class="about_us-right">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top-page-about-us.jpg" alt="クリニック紹介">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div id="Features" class="min-h-screen">
         <div class="container">
+            <div class="inner_container"></div>
         </div>
     </div>
     <div id="Information" class="min-h-screen">
         <div class="container">
+            <div class="inner_container"></div>
         </div>
     </div>
     <div id="Access" class="min-h-screen">
         <div class="container">
+            <div class="inner_container"></div>
         </div>
     </div>
     <div id="ClinicHours" class="min-h-screen">
         <div class="container">
+            <div class="inner_container"></div>
         </div>
     </div>
     <div id="News" class="min-h-screen">
         <div class="container">
+            <div class="inner_container"></div>
         </div>
     </div>
 </main>
