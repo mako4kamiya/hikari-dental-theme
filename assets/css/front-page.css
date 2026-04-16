@@ -22,7 +22,7 @@ div#MainVisual {
         background-color: rgba(19, 30, 61, 70%);
     }
     .main_visual_container {
-        padding: 0 112px;
+        padding: 7rem 7rem;
         display: flex;
         div.grid-container {
             grid-template-columns: 1fr 1fr;
@@ -31,11 +31,12 @@ div#MainVisual {
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-start;
-                row-gap: 40px;
+                row-gap: 2rem;
+                position: relative;
                 a.logo-mainvisual {
                     display: inline-flex;
                     position: absolute;
-                    top: 10%;
+                    top: -44px;
                 }
                 p.text-style-p-regular {
                     color: var(--dark-mode-font1);
