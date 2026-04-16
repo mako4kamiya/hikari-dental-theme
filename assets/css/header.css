@@ -4,7 +4,7 @@ header {
     z-index: 100;
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.5s;
+    transition: all 0.5s;
     div {
         background-color: var(--dark-mode-background);
         height: 4rem;
