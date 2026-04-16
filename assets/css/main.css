@@ -150,6 +150,7 @@ input, button, textarea, select {
     color: inherit;
 }
 .dark-mode {
+    background-color: var(--dark-mode-background);
     :focus {
         outline: none
     }
@@ -159,26 +160,25 @@ input, button, textarea, select {
         outline: 2px solid var(--dark-mode-button-focus-outline);
     }
 }
-.lightmode {
-    &:focus {
+.light-mode {
+    background-color: var(--light-mode-background);
+    :focus {
         outline: none
     }
-    &:focus-visible {
+    :focus-visible {
         box-shadow: 0px 0px 0px 2px var(--light-mode-button-focus-shadow);
         outline-offset: 2px;
         outline: 2px solid var(--light-mode-button-focus-outline);
     }
 }
-.min-h-screen {
-    min-height: calc(100vh - 4rem); /* フォールバック */
-    min-height: calc(100svh - 4rem);
+.h-100svh {
+    height: 100svh;
 }
 .container {
     padding: 0 4rem;
     z-index: 1;
 }
 .inner_container {
-    margin-top: 4rem;
     padding: 5rem 0;
 }
 .flex {
@@ -186,6 +186,7 @@ input, button, textarea, select {
 }
 .grid {
     display: grid;
+    min-height: 0;
 }
 
 /* コンポーネント */
@@ -204,5 +205,15 @@ button {
     }
     &:active {
         background-color: var(--dark-mode-button-active);
+    }
+}
+.light-mode button {
+    background-color: var(--light-mode-button-default);
+    color: var(--light-mode-button-text);
+    &:hover {
+        background-color: var(--light-mode-button-hover);
+    }
+    &:active {
+        background-color: var(--light-mode-button-active);
     }
 }

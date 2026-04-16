@@ -1,6 +1,4 @@
 div#MainVisual {
-    height: 100vh; /* フォールバック */
-    height: 100svh;
     &::before {
         content: "";
         position: absolute;
@@ -23,6 +21,7 @@ div#MainVisual {
     .main_visual_container {
         padding: 7rem 7rem;
         grid-template-columns: 1fr 1fr;
+        gap: 2rem;
         div.main_visual-left {
             flex-direction: column;
             justify-content: center;
@@ -41,11 +40,21 @@ div#MainVisual {
     }
 }
 div#AboutUs {
-    height: calc(100svh - 4rem);
-    .grid-container {
+    padding-top: 4rem;
+    .inner_container {
         grid-template-columns: 1fr 1fr;
-        .about_us-right img {
+        gap: 2rem;
+        div.about_us-left {
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            row-gap: 4rem;
+        }
+        img.about_us-right {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 0;
         }
     }
 }
