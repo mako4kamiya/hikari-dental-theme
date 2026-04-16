@@ -172,18 +172,19 @@ input, button, textarea, select {
 .min-h-screen {
     min-height: calc(100vh - 4rem); /* フォールバック */
     min-height: calc(100svh - 4rem);
-    display: flex;
 }
 .container {
     padding: 0 4rem;
     z-index: 1;
-    display: flex;
 }
 .inner_container {
     margin-top: 4rem;
     padding: 5rem 0;
 }
-.grid-container {
+.flex {
+    display: flex;
+}
+.grid {
     display: grid;
 }
 

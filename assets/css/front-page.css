@@ -1,7 +1,6 @@
 div#MainVisual {
     height: 100vh; /* フォールバック */
     height: 100svh;
-    display: flex;
     &::before {
         content: "";
         position: absolute;
@@ -23,29 +22,26 @@ div#MainVisual {
     }
     .main_visual_container {
         padding: 7rem 7rem;
-        display: flex;
-        div.grid-container {
-            grid-template-columns: 1fr 1fr;
-            div.main_visual-left {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
-                row-gap: 2rem;
-                position: relative;
-                a.logo-mainvisual {
-                    display: inline-flex;
-                    position: absolute;
-                    top: -44px;
-                }
-                p.text-style-p-regular {
-                    color: var(--dark-mode-font1);
-                }
+        grid-template-columns: 1fr 1fr;
+        div.main_visual-left {
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            row-gap: 2rem;
+            position: relative;
+            a.logo-mainvisual {
+                display: inline-flex;
+                position: absolute;
+                top: -44px;
+            }
+            p.text-style-p-regular {
+                color: var(--dark-mode-font1);
             }
         }
     }
 }
 div#AboutUs {
+    height: calc(100svh - 4rem);
     .grid-container {
         grid-template-columns: 1fr 1fr;
         .about_us-right img {
