@@ -20,9 +20,11 @@ div#MainVisual {
     }
     .main_visual_container {
         padding: 7rem 7rem;
+        display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
         div.main_visual-left {
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
@@ -37,25 +39,27 @@ div#MainVisual {
     }
 }
 div#AboutUs {
-    .inner_container {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        div.about_us-left {
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            row-gap: 4rem;
-        }
-        img.about_us-right {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            min-height: 0;
+    .container {
+        .inner_container {
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 2rem;
+            div.about_us-left {
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+            }
+            img.about_us-right {
+                width: 100%;
+                height: 10%;
+                object-fit: cover;
+            }
         }
     }
 }
 div#Features {
     .inner_container {
+        display: flex;
         flex-direction: column;
         justify-content: space-between;
         .headings {
@@ -65,6 +69,7 @@ div#Features {
             }
         }
         .cards {
+            display: grid;
             gap: 2rem;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             .card {
