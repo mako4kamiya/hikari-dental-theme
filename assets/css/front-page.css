@@ -33,9 +33,6 @@ div#MainVisual {
                 position: absolute;
                 top: -44px;
             }
-            p.text-style-p-regular {
-                color: var(--dark-mode-font1);
-            }
         }
     }
 }
@@ -54,6 +51,30 @@ div#AboutUs {
             height: 100%;
             object-fit: cover;
             min-height: 0;
+        }
+    }
+}
+div#Features {
+    .inner_container {
+        flex-direction: column;
+        justify-content: space-between;
+        .headings {
+            h2, p {
+                color: var(--dark-mode-font2);
+                text-align: center;
+            }
+        }
+        .cards {
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            .card {
+                padding: 0 2rem;
+                gap: 2rem;
+                h3 {
+                    color: var(--dark-mode-font2);
+                    text-align: center;
+                }
+            }
         }
     }
 }
