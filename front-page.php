@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <div id="AboutUs" class="light-mode h-100svh grid">
+    <div id="AboutUs" class="light-mode h-100svh pt-4rem grid">
         <div class="container grid">
             <div class="inner_container grid">
                 <div class="about_us-left flex">

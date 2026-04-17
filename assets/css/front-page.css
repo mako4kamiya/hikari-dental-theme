@@ -40,7 +40,6 @@ div#MainVisual {
     }
 }
 div#AboutUs {
-    padding-top: 4rem;
     .inner_container {
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
