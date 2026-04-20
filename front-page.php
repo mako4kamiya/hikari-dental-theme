@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <div id="AboutUs" class="light-mode pt-4rem">
+    <div id="AboutUs" class="light-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="about_us-left">
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div id="Features" class="dark-mode pt-4rem">
+    <div id="Features" class="dark-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="headings">
@@ -65,7 +65,47 @@
     </div>
     <div id="Information" class="light-mode">
         <div class="container">
-            <div class="inner_container"></div>
+            <div class="inner_container">
+                <div class="headings">
+                    <p class="text-style-shoulder">Information</p>
+                    <h2 class="text-style-h1">診療案内</h2>
+                    <p class="text-style-subtitle">幅広い診療に対応し、お悩みに合わせた治療をご提案します。</p>
+                </div>
+                <div class="cards">
+                    <div class="card card1">
+                        <div class="headings">
+                            <h3 class="text-style-h2">一般歯科</h3>
+                        </div>
+                        <img class="icon" src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-general.png" alt="一般歯科のアイコン">
+                        <p class="text-style-p-regular">
+                            虫歯や歯周病など、お口の健康を守る基本的な治療を行います。
+                        </p>
+                    </div>
+                    <div class="card card2">
+                        <div class="headings">
+                            <h3 class="text-style-h2">予防歯科</h3>
+                        </div>
+                        <img class="icon" src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-preventive.png" alt="予防歯科のアイコン"></i>
+                        <p class="text-style-p-regular">
+                            健康な歯を守るためのクリーニングや定期検診を行います。
+                        </p>
+                    </div>
+                    <div class="card card3">
+                        <div class="headings">
+                            <h3 class="text-style-h2">小児歯科</h3>
+                        </div>
+                        <img class="icon" src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-pedodontic.png" alt="小児歯科のアイコン"></i>
+                        <p class="text-style-p-regular">
+                            お子さまの成長に合わせたやさしい歯科診療を行います。
+                        </p>
+                    </div>
+                </div>
+                <div class="page-navigation">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-left.png" alt="左矢印のアイコン">
+                    <p class="text-style-subtitle">1 / 5</p>
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-right.png" alt="右矢印のアイコン">
+                </div>
+            </div>
         </div>
     </div>
     <div id="Access" class="dark-mode">
