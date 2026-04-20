@@ -21,6 +21,8 @@
     --dark-mode-button-active: var(--primitive-gold-d86);
     --dark-mode-button-focus-outline: var(--neutral-light);
     --dark-mode-button-focus-shadow: var(--neutral-dark);
+    --dark-mode-card-default: color-mix(in srgb, var(--neutral-dark), transparent 50%);
+    --dark-mode-card-hover: var(--neutral-dark);
 
     --light-mode-background: var(--neutral-light);
     --light-mode-font1: var(--neutral-dark);
@@ -187,9 +189,12 @@ input, button, textarea, select {
     padding: 0 4rem;
     position: relative;
     z-index: 1;
+    display: flex;
+    flex: 1;
 }
 .inner_container {
     padding: 5rem 0;
+    flex: 1;
 }
 .headings h1, .headings h2, .headings h3 {
     margin-bottom: 1rem;
@@ -222,4 +227,11 @@ button {
     &:active {
         background-color: var(--light-mode-button-active);
     }
+}
+
+.card {
+    border: 1px solid var(--neutral-gray);
+}
+.dark-mode .card {
+    background-color: var(--dark-mode-card-default);
 }
