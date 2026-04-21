@@ -47,6 +47,7 @@
 				'clinic_nearest_station' => '最寄り駅',
 				'clinic_tel'         => '電話番号',
 				'clinic_email'       => 'メールアドレス',
+				'company_map'     => 'Googleマップ埋め込みコード',
 			];
 			foreach ( $fields as $id => $label ) {
 				add_settings_field(
