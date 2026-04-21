@@ -13,9 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       
-    - name: Show commit info
+    - name: Show commit info - ${{ github.event.head_commit.timestamp }}
       run: |
-        echo "Date: ${{ github.event.head_commit.timestamp }}"
         echo "Message: ${{ github.event.head_commit.message }}"
       
     - name: Install SSH key
