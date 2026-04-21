@@ -148,6 +148,21 @@ div#Information {
             justify-content: center;
             align-items: center;
             gap: 1rem;
+            button {
+                min-width: unset;
+                min-height: unset;
+                background-color: var(--neutral-light);
+                color: var(--light-mode-font1);
+                border: 1px solid var(--light-mode-font1);
+                border-radius: 50%;
+                font-size: 2rem;
+                width: 3rem;
+                height: 3rem;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
     }
 }

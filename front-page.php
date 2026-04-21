@@ -101,9 +101,9 @@
                     </div>
                 </div>
                 <div class="page-navigation">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-left.png" alt="左矢印のアイコン">
+                    <button type="button">&lt;</button>
                     <p class="text-style-subtitle">1 / 5</p>
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-right.png" alt="右矢印のアイコン">
+                    <button type="button">&gt;</button>
                 </div>
             </div>
         </div>
