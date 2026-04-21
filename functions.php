@@ -33,4 +33,37 @@
 	endif;
 	add_action('wp_head', 'my_theme_add_preconnect');
 
+	if ( ! function_exists( 'my_clinic_info' ) ) :
+		function my_clinic_info() {
+			add_settings_section(
+				'clinic_info_section',
+				'クリニック基本情報',
+				'',
+				'general'
+			);
+			$fields = [
+				'clinic_postal_code' => '郵便番号',
+				'clinic_address'     => '住所',
+				'clinic_nearest_station' => '最寄り駅',
+				'clinic_tel'         => '電話番号',
+				'clinic_email'       => 'メールアドレス',
+			];
+			foreach ( $fields as $id => $label ) {
+				add_settings_field(
+					$id,
+					$label,
+					function() use ( $id ) {
+						$value = get_option( $id );
+						echo '<input type="text" id="' . esc_attr( $id ) . '" name="' . esc_attr( $id ) . '" value="' . esc_attr( $value ) . '" class="regular-text">';
+					},
+					'general',
+					'clinic_info_section'
+				);
+				register_setting( 'general', $id );
+			}
+			
+		}
+	endif;
+	add_action('admin_init', 'my_clinic_info');
+
 ?>
