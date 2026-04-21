@@ -67,4 +67,90 @@
 	endif;
 	add_action('admin_init', 'my_clinic_info');
 
+	if ( ! function_exists( 'my_clinic_hours_setting' ) ) :
+    function my_clinic_hours_setting() {
+        add_settings_section(
+            'clinic_hours_section',
+            '診療時間表の設定',
+            '',
+            'general'
+        );
+
+        add_settings_field(
+            'clinic_hours_table_field',
+            '診療時間',
+            'render_clinic_hours_table',
+            'general',
+            'clinic_hours_section'
+        );
+
+		register_setting( 'general', 'clinic_am_label' );
+		register_setting( 'general', 'clinic_pm_label' );
+
+        $days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+        $times = ['am', 'pm'];
+        foreach ( $days as $d ) {
+            foreach ( $times as $t ) {
+                register_setting( 'general', "clinic_{$d}_{$t}" );
+            }
+        }
+    }
+	endif;
+
+	/**
+	 * 管理画面にテーブル形式の入力欄を表示する
+	 */
+	function render_clinic_hours_table() {
+		$days = ['mon' => '月', 'tue' => '火', 'wed' => '水', 'thu' => '木', 'fri' => '金', 'sat' => '土', 'sun' => '日'];
+		$choices = ['○' => '○ (診療)', '×' => '× (休診)', '△' => '△(備考)'];
+		$times = ['am' => '9:00～13:00','pm' => '15:00～19:00'];
+    ?>
+    <style>
+        .admin-clinic-table { border-collapse: collapse; text-align: center; }
+        .admin-clinic-table th, .admin-clinic-table td { border: 1px solid #ccc; padding: 8px; }
+        .admin-clinic-table th { background: #f0f0f0; text-align: center;}
+        .time-label-input { width: 150px; text-align: center; font-weight: bold; }
+    </style>
+
+    <table class="admin-clinic-table">
+        <thead>
+            <tr>
+                <th>診療時間</th>
+                <?php foreach ( $days as $label ) echo "<th>{$label}</th>"; ?>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ( $times as $t_id => $default_label ) : 
+                $label_option_id = "clinic_{$t_id}_label";
+                $current_label = get_option( $label_option_id, $default_label );
+            ?>
+                <tr>
+                    <td>
+                        <input type="text" 
+                               name="<?php echo esc_attr( $label_option_id ); ?>" 
+                               value="<?php echo esc_attr( $current_label ); ?>" 
+                               class="time-label-input" 
+                               placeholder="例：9:00〜13:00">
+                    </td>
+                    <?php foreach ( $days as $d_id => $d_label ) : 
+                        $option_id = "clinic_{$d_id}_{$t_id}";
+                        $current_val = get_option( $option_id, '○' );
+                    ?>
+                        <td>
+                            <select name="<?php echo esc_attr( $option_id ); ?>">
+                                <?php foreach ( $choices as $v => $c_label ) : ?>
+                                    <option value="<?php echo esc_attr($v); ?>" <?php selected($current_val, $v); ?>>
+                                        <?php echo esc_html($c_label); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                    <?php endforeach; ?>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+    <?php
+	}
+	add_action( 'admin_init', 'my_clinic_hours_setting' );
 ?>
