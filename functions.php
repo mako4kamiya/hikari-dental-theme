@@ -15,6 +15,9 @@
 	}
 	add_action( 'after_setup_theme', 'HikariDentalTheme_setup' );
 
+
+
+
 	/**
 	 * CSS・JavaScriptの読み込み設定
 	 */
@@ -27,6 +30,9 @@
 	}
 	add_action('wp_enqueue_scripts', 'my_enqueue_assets');
 
+
+
+
 	/**
 	 * <head>タグ内へのカスタムコード挿入
 	 * Google Fontsなどの外部リソースを読み込むためのタグをhead内に出力します。
@@ -36,6 +42,9 @@
 		echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
 	}
 	add_action('wp_head', 'my_theme_add_preconnect');
+
+
+
 
 	/**
 	 * 管理画面のメニュー追加
@@ -50,39 +59,7 @@
 			);
 	}
 	add_action('admin_menu', 'my_clinic_info');
-
-	function clinic_register_settings() {
-		add_settings_section(
-			'clinic_info_sections',
-			'クリニック基本情報',
-			'',
-			'clinic-info'
-		);
-		$fields = [
-			'clinic_postal_code' => '郵便番号',
-			'clinic_address'     => '住所',
-			'clinic_nearest_station' => '最寄り駅',
-			'clinic_tel'         => '電話番号',
-			'clinic_email'       => 'メールアドレス',
-			'clinic_map'     => 'Googleマップ埋め込みコード',
-		];
-		foreach ( $fields as $id => $label ) {
-			add_settings_field(
-				$id,
-				$label,
-				function() use ( $id ) {
-					$value = get_option( $id );
-					echo '<input type="text" id="' . esc_attr( $id ) . '" name="' . esc_attr( $id ) . '" value="' . esc_attr( $value ) . '" class="regular-text">';
-				},
-				'clinic-info',
-				'clinic_info_sections'
-			);
-			register_setting( 'register_clinic_info', $id );
-		}
-		
-	}
-	add_action('admin_init', 'clinic_register_settings');
-	
+	// 管理画面の表示
 	function clinic_settings_page_html() {
 		?>
 		<div class="wrap">
@@ -97,4 +74,63 @@
 		</div>
 		<?php
 	}
+	// 情報の登録
+	function clinic_register_settings() {
+		// クリニック基本情報
+		add_settings_section(
+			'clinic_info_section',
+			'クリニック基本情報',
+			'',
+			'clinic-info'
+		);
+		$fields = [
+			'clinic_postal_code' => '郵便番号',
+			'clinic_address'     => '住所',
+			'clinic_nearest_station' => '最寄り駅',
+			'clinic_tel'         => '電話番号',
+			'clinic_email'       => 'メールアドレス',
+			'clinic_map'     => 'Googleマップ埋め込みコード',
+			'clinic_hours_am' => '午前の診療時間',
+			'clinic_hours_pm' => '午後の診療時間',
+			'clinic_hours_other' => 'その他の診療時間',
+		];
+		foreach ( $fields as $id => $label ) {
+			add_settings_field(
+				$id,
+				$label,
+				function() use ( $id ) {
+					$value = get_option( $id );
+					echo '<input type="text" id="' . esc_attr( $id ) . '" name="' . esc_attr( $id ) . '" value="' . esc_attr( $value ) . '" class="regular-text">';
+				},
+				'clinic-info',
+				'clinic_info_section'
+			);
+			register_setting( 'register_clinic_info', $id );
+		}
+		// 曜日ごとの診療有無
+		add_settings_section(
+			'clinic_weekly_hours_section',
+			'曜日ごとの診療の有無',
+			function() { echo '<p>各曜日の午前・午後の診療設定をしてください。</p>'; },
+			'clinic-info'
+		);
+		$days = [
+			'mon' => '月', 'tue' => '火', 'wed' => '水', 'thu' => '木',
+			'fri' => '金', 'sat' => '土', 'sun' => '日', 'holiday' => '祝',
+		];
+		$options_list = ['○：診療あり', '-：診療なし', '△：その他の診療時間'];
+		add_settings_field(
+			$id,
+			$label,
+			'clinic_weekly_hours_table_html',
+			'clinic-info',
+			'clinic_weekly_hours_section'
+		);
+		function clinic_weekly_hours_table_html() {
+			?>
+			<table class="aiueo"></table>
+			<?php
+		}
+	}
+	add_action('admin_init', 'clinic_register_settings');
 ?>
