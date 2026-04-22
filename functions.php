@@ -126,9 +126,39 @@
 			'clinic-info',
 			'clinic_weekly_hours_section'
 		);
+		register_setting( 'register_clinic_info', $id );
 		function clinic_weekly_hours_table_html() {
 			?>
-			<table class="aiueo"></table>
+			<table>
+				<thead>
+					<tr>
+						<th>診療時間</th>
+						<th>月</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>午前</th>
+						<td>
+							<select>
+								<option>〇</option>
+								<option>-</option>
+								<option>△</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th>午後</th>
+						<td>
+							<select>
+								<option>〇</option>
+								<option>-</option>
+								<option>△</option>
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 			<?php
 		}
 	}
