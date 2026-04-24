@@ -107,56 +107,73 @@
 			);
 			register_setting( 'register_clinic_info', $id );
 		}
-		// 曜日ごとの診療有無
+
+
+		// 各曜日ごとの診療の有無
 		add_settings_section(
 			'clinic_weekly_hours_section',
-			'曜日ごとの診療の有無',
-			function() { echo '<p>各曜日の午前・午後の診療設定をしてください。</p>'; },
+			'各曜日ごとの診療の有無',
+			function() {
+				echo '<p>-：診療なし、○：診療あり、△：その他の診療時間</p>';
+			},
 			'clinic-info'
 		);
-		$days = [
-			'mon' => '月', 'tue' => '火', 'wed' => '水', 'thu' => '木',
-			'fri' => '金', 'sat' => '土', 'sun' => '日', 'holiday' => '祝',
-		];
-		$options_list = ['○：診療あり', '-：診療なし', '△：その他の診療時間'];
+		$config = array(
+			'times' => ['am' => '午前', 'pm' => '午後'],
+			'days'  => ['mon' => '月', 'tue' => '火', 'wed' => '水', 'thu' => '木', 'fri' => '金', 'sat' => '土', 'sun' => '日', 'holiday' => '祝'],
+		);
 		add_settings_field(
-			$id,
-			$label,
+			'clinic_weekly_hours_field',
+			'診療時間',
 			'clinic_weekly_hours_table_html',
 			'clinic-info',
-			'clinic_weekly_hours_section'
+			'clinic_weekly_hours_section',
+			$config
 		);
-		register_setting( 'register_clinic_info', $id );
-		function clinic_weekly_hours_table_html() {
+		foreach ( $config['times'] as $t_key => $t_label ) {
+			foreach ( $config['days'] as $d_key => $d_label ) {
+				register_setting( 'register_clinic_info', "clinic_hours_{$d_key}_{$t_key}" );
+			}
+		}
+		function clinic_weekly_hours_table_html( $args ) {
+			$days = $args['days'];
+			$times = $args['times'];
+			$options_list = ['-', '○', '△'];
 			?>
-			<table>
+			<style>
+				table.clinic-hours { border-collapse: collapse; }
+				table.clinic-hours th, table.clinic-hours td { border: 1px solid #ccc; text-align: center; align-content: center; padding: 5px; }
+			</style>
+			<table class="clinic-hours">
 				<thead>
 					<tr>
 						<th>診療時間</th>
-						<th>月</th>
+						<?php foreach( $days as $d_key => $d_label ) : ?>
+						<td><?php echo esc_attr( $d_label ) ?></td>
+						<?php endforeach; ?>
 					</tr>
 				</thead>
 				<tbody>
+					<?php foreach( $times as $t_key => $t_label ) : ?>
 					<tr>
-						<th>午前</th>
+						<th><?php echo esc_attr( $t_label ) ?></th>
+						<?php foreach( $days as $d_key => $d_label ) : ?>
+						<?php
+							$id = "clinic_hours_{$d_key}_{$t_key}";
+							$current_val = get_option( $id, '-' ); 
+						?>
 						<td>
-							<select>
-								<option>〇</option>
-								<option>-</option>
-								<option>△</option>
+							<select name="<?php echo esc_attr( $id ) ?>">
+								<?php foreach( $options_list as $option ) : ?>
+								<option value="<?php echo esc_attr( $option ) ?>" <?php selected( $current_val, $option ); ?>>
+									<?php echo esc_attr( $option ) ?>
+								</option>
+								<?php endforeach; ?>
 							</select>
 						</td>
+						<?php endforeach; ?>
 					</tr>
-					<tr>
-						<th>午後</th>
-						<td>
-							<select>
-								<option>〇</option>
-								<option>-</option>
-								<option>△</option>
-							</select>
-						</td>
-					</tr>
+					<?php endforeach; ?>
 				</tbody>
 			</table>
 			<?php
