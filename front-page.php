@@ -139,7 +139,13 @@
     </div>
     <div id="ClinicHours" class="light-mode">
         <div class="container">
-            <div class="inner_container"></div>
+            <div class="inner_container">
+                <div class="headings">
+                    <p class="text-style-shoulder">Clinic Hours</p>
+                    <h2 class="text-style-h1">診療時間</h2>
+                </div>
+                <?php echo do_shortcode( '[clinic_table]' ); ?>
+            </div>
         </div>
     </div>
     <div id="News" class="dark-mode">

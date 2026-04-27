@@ -151,7 +151,7 @@
 					<tr>
 						<th>診療時間</th>
 						<?php foreach( $days as $d_key => $d_label ) : ?>
-						<td><?php echo esc_attr( $d_label ) ?></td>
+						<th><?php echo esc_attr( $d_label ) ?></th>
 						<?php endforeach; ?>
 					</tr>
 				</thead>
@@ -182,4 +182,53 @@
 		}
 	}
 	add_action('admin_init', 'clinic_register_settings');
+
+
+
+
+	/**
+	 * 診療時間のショートコード
+	 */
+	function clinic_hours_table_html() {
+		$days = ['診療時間', '月', '火', '水', '木', '金', '土', '日', '祝'];
+		$clinic_hours = ['am' => get_option( 'clinic_hours_am') ?: '午前', 'pm' => get_option( 'clinic_hours_pm') ?: '午後'];
+		$clinic_hours_other = get_option( 'clinic_hours_other');
+		$clinic_weekly_schedule = ['mon_am' => '‐', 'tue_am' => '‐', 'wed_am' => '〇', 'thu_am' => '〇', 'fri_am' => '〇', 'sat_am' => '〇', 'sun_am' => '〇', 'holiday_am' => '〇'];
+
+		ob_start(); 
+		?>
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<?php foreach( $days as $day ) : ?>
+						<th class="text-style-table-header"><?php echo esc_attr( $day ) ?></th>
+						<?php endforeach ?>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach( $clinic_hours as $h_key => $h_label ) : ?>
+					<tr>
+						<th class="text-style-table-header"><?php echo esc_attr( $h_label ) ?></th>
+						<?php foreach( $clinic_weekly_schedule as $w_key => $w_label ) : ?>
+							<td class="text-style-table-body"><?php echo esc_attr( $w_label ) ?></td>
+						<?php endforeach ?>
+					</tr>
+					<?php endforeach ?>
+				</tbody>
+			</table>
+			<p class="text-style-table-header">
+				<?php
+					if ($clinic_hours_other !== '') {
+						echo '△・・・' . esc_attr($clinic_hours_other);
+					}
+				?>
+			</p>
+		</div>
+		<?php
+		$html = ob_get_clean();
+
+		return $html;
+	}
+	add_shortcode('clinic_table', 'clinic_hours_table_html');
 ?>
