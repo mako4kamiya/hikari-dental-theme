@@ -92,7 +92,7 @@
 			'clinic_map'     => 'Googleマップ埋め込みコード',
 			'clinic_hours_am' => '午前の診療時間',
 			'clinic_hours_pm' => '午後の診療時間',
-			'clinic_hours_other' => 'その他の診療時間',
+			'clinic_hours_other' => 'その他の診療時間（△）',
 		];
 		foreach ( $fields as $id => $label ) {
 			add_settings_field(
@@ -114,12 +114,14 @@
 			'clinic_weekly_hours_section',
 			'各曜日ごとの診療の有無',
 			function() {
-				echo '<p>-：診療なし、○：診療あり、△：その他の診療時間</p>';
+				$clinic_hours_other = get_option( 'clinic_hours_other' );
+				$other_time = $clinic_hours_other ? 'その他の診療時間（'. $clinic_hours_other. '）' : 'その他の診療時間' ;
+				echo '<p>-：診療なし、○：診療あり、△：'. $other_time .'</p>';
 			},
 			'clinic-info'
 		);
 		$config = array(
-			'times' => ['am' => '午前', 'pm' => '午後'],
+			'times' => ['am' => get_option( 'clinic_hours_am') ?: '午前', 'pm' => get_option( 'clinic_hours_pm') ?: '午後'],
 			'days'  => ['mon' => '月', 'tue' => '火', 'wed' => '水', 'thu' => '木', 'fri' => '金', 'sat' => '土', 'sun' => '日', 'holiday' => '祝'],
 		);
 		add_settings_field(
