@@ -1,0 +1,36 @@
+footer {
+    min-height: 100svh;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .inner_container {
+        padding: unset;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 2rem;
+            & > div {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .clinic-info {
+                grid-column: 1 / 4;
+            }
+        }
+    }
+    .logo-footer {
+        position: absolute;
+        bottom: 50px;
+        right: 4rem;
+    }
+    .copy {
+        display: block;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+}

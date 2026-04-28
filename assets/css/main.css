@@ -158,6 +158,9 @@ body {
 input, button, textarea, select {
     color: inherit;
 }
+li {
+    list-style: none;
+}
 .dark-mode {
     background-color: var(--dark-mode-background);
     :focus {
