@@ -216,3 +216,29 @@ div#ClinicHours {
         }
     }
 }
+div#News {
+    min-height: 100svh;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    .inner_container {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        .headings {
+            p, h2 {
+                color: var(--dark-mode-font2);
+            }
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: center;
+            gap: 1rem;
+            a {
+                color: var(--dark-mode-link-font);
+            }
+        }
+    }
+}

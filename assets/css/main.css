@@ -15,6 +15,7 @@
     --dark-mode-background: var(--neutral-dark);
     --dark-mode-font1: var(--neutral-light);
     --dark-mode-font2: var(--primitive-gold-d77);
+    --dark-mode-link-font: #ADD5FF;
     --dark-mode-button-text: var(--neutral-dark);
     --dark-mode-button-default: var(--primitive-gold-d77);
     --dark-mode-button-hover: var(--primitive-gold-d93);
