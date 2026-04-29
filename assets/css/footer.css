@@ -1,36 +1,43 @@
 footer {
     min-height: 100svh;
-    padding-top: 4rem;
     display: flex;
     flex-direction: column;
-    position: relative;
-    .inner_container {
-        padding: unset;
-        display: flex;
+    .container {
         flex-direction: column;
-        justify-content: space-between;
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: 2rem;
-            & > div {
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-            }
-            .clinic-info {
-                grid-column: 1 / 4;
+        .inner_container {
+            padding: unset;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 1fr 2fr;
+                gap: 1rem;
+                & > div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                }
+                .clinic-info {
+                    grid-column: 1 / 4;
+                }
+                .clinic-hours {
+                    li:nth-of-type(odd) {
+                        color: var(--light-mode-font2);
+                    }
+                }
             }
         }
-    }
-    .logo-footer {
-        position: absolute;
-        bottom: 50px;
-        right: 4rem;
-    }
-    .copy {
-        display: block;
-        text-align: center;
-        padding-bottom: 1rem;
+        .logo-footer {
+            position: absolute;
+            bottom: 4rem;
+            right: 4rem;
+        }
+        .copy {
+            display: block;
+            text-align: center;
+            padding-bottom: 1rem;
+        }
     }
 }

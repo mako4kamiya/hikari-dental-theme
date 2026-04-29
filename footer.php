@@ -1,4 +1,4 @@
-    <footer>
+    <footer class="light-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="grid-container">
@@ -33,28 +33,28 @@
                         <p class="text-style-p-bold">サイトマップ</p>
                         <ul>
                             <li class="text-style-p-regular">
-                                <a href="">トップページ</a>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">トップページ</a>
                             </li>
                             <li class="text-style-p-regular">
-                                <a href="">クリニック紹介</a>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">クリニック紹介</a>
                             </li>
                             <li class="text-style-p-regular">
-                                <a href="">診療案内</a>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">診療案内</a>
                             </li>
                             <li class="text-style-p-regular">
-                                <a href="">アクセス</a>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">アクセス</a>
                             </li>
                             <li class="text-style-p-regular">
-                                <a href="">診療時間</a>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">診療時間</a>
                             </li>
                             <li class="text-style-p-regular">
-                                <a href="">お知らせ</a>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">お知らせ</a>
                             </li>
                             <li class="text-style-p-regular">
-                                <a href="">お問い合わせ</a>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">お問い合わせ</a>
                             </li>
                             <li class="text-style-p-regular">
-                                <a href="">プライバシーポリシー</a>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">プライバシーポリシー</a>
                             </li>
                         </ul>
                     </div>
@@ -62,28 +62,28 @@
                         <p class="text-style-p-bold">診療案内</p>
                         <ul>
                             <li class="text-style-p-regular">
-                                <a href="">一般歯科</a>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">一般歯科</a>
                             </li>
                             <li class="text-style-p-regular">
-                                <a href="">予防歯科</a>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">予防歯科</a>
                             </li>
                             <li class="text-style-p-regular">
-                                <a href="">小児歯科</a>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">小児歯科</a>
                             </li>
                             <li class="text-style-p-regular">
-                                <a href="">審美歯科</a>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">審美歯科</a>
                             </li>
                             <li class="text-style-p-regular">
-                                <a href="">ホワイトニング</a>
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホワイトニング</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <p class="text-style-p-regular">※本サイトはデジタル庁デザインシステムを参考に制作しています。</p>
             </div>
+            <a class="logo-footer" href="<?php echo home_url(); ?>"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/hikari-dental-logo-footer.png" alt="ひかりデンタルクリニックのロゴフッター"></a>
+            <small class="copy text-style-footer-regular">&copy; 2026 HIKARI DENTAL CLINIC. All Rights Reserved.</small>
         </div>
-        <a class="logo-footer" href="<?php echo home_url(); ?>"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/hikari-dental-logo-footer.png" alt="ひかりデンタルクリニックのロゴフッター"></a>
-        <small class="copy text-style-footer-regular">&copy; 2026 HIKARI DENTAL CLINIC. All Rights Reserved.</small>
     </footer>
     <?php wp_footer(); ?>
     </body>
