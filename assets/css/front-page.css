@@ -236,9 +236,6 @@ div#News {
             flex-wrap: wrap;
             align-content: center;
             gap: 1rem;
-            a {
-                color: var(--dark-mode-link-font);
-            }
         }
     }
 }

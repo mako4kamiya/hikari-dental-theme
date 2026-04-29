@@ -15,7 +15,9 @@
     --dark-mode-background: var(--neutral-dark);
     --dark-mode-font1: var(--neutral-light);
     --dark-mode-font2: var(--primitive-gold-d77);
-    --dark-mode-link-font: #ADD5FF;
+    --dark-mode-link-text: #ADD5FF;
+    --dark-mode-link-visited: #FF86FF;
+    --dark-mode-link-active: #FFBA94;
     --dark-mode-button-text: var(--neutral-dark);
     --dark-mode-button-default: var(--primitive-gold-d77);
     --dark-mode-button-hover: var(--primitive-gold-d93);
@@ -28,6 +30,9 @@
     --light-mode-background: var(--neutral-light);
     --light-mode-font1: var(--neutral-dark);
     --light-mode-font2: var(--primitive-gold-l45d32);
+    --light-mode-link-text: #00118F;
+    --light-mode-link-visited: #8B008B;
+    --light-mode-link-active: #943500;
     --light-mode-button-text: var(--neutral-light);
     --light-mode-button-default: var(--primitive-gold-l31d48);
     --light-mode-button-hover: var(--primitive-gold-l47d31);
@@ -161,6 +166,13 @@ input, button, textarea, select {
 li {
     list-style: none;
 }
+a {
+    text-decoration: underline;
+    text-decoration-thickness: from-font;
+    &:hover {
+        text-decoration-thickness: 0.2rem;
+    }
+}
 .dark-mode {
     background-color: var(--dark-mode-background);
     :focus {
@@ -173,6 +185,15 @@ li {
     }
     p, h1, h2, h3 {
         color: var(--dark-mode-font1);
+    }
+    a {
+        color: var(--dark-mode-link-text);
+        &:visited {
+            color: var(--dark-mode-link-visited);
+        }
+        &:active {
+            color: var(--dark-mode-link-active);
+        }
     }
 }
 .light-mode {
@@ -190,6 +211,15 @@ li {
     }
     p.text-style-shoulder {
         color: var(--light-mode-font2);
+    }
+    a {
+        color: var(--light-mode-link-text);
+        &:visited {
+            color: var(--light-mode-link-visited);
+        }
+        &:active {
+            color: var(--light-mode-link-active);
+        }
     }
 }
 .min-h-100svh {
