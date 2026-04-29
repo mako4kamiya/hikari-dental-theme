@@ -1,16 +1,25 @@
 const Header = document.querySelector('header');
 const MainVisual = document.querySelector('#MainVisual');
-const Footer = document.querySelector('footer');
+const Copylight = document.querySelector('#Copylight');
+
+let isMVvisible = false;
+let isCLvisible = false;
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-            Header.classList.add('is-show');
-        } else {
-            Header.classList.remove('is-show');
+    entries.forEach(entry => {
+        if (entry.target.id === 'MainVisual') {
+            isMVvisible = entry.isIntersecting;
+        } else if (entry.target.id === 'Copylight') {
+            isCLvisible = entry.isIntersecting;
         }
     });
+
+    if (isMVvisible || isCLvisible) {
+        Header.classList.remove('is-show');
+    } else {
+        Header.classList.add('is-show');
+    }
 });
 
-observer.observe(MainVisual);
-observer.observe(Footer);
+if (MainVisual) observer.observe(MainVisual);
+if (Copylight) observer.observe(Copylight);
