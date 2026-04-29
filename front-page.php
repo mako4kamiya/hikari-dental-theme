@@ -156,9 +156,9 @@
                     <h2 class="text-style-h1">お知らせ</h2>
                 </div>
                 <div class="links">
-                    <a href="" class="text-style-a-regular">2026.02.05　休診日のご案内</a>
-                    <a href="" class="text-style-a-regular">2026.02.05　感染症対策について</a>
-                    <a href="" class="text-style-a-regular">2026.02.05　ホームページを開設しました</a>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-style-a-regular">2026.02.05　休診日のご案内</a>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-style-a-regular">2026.02.05　感染症対策について</a>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-style-a-regular">2026.02.05　ホームページを開設しました</a>
                 </div>
             </div>
         </div>
