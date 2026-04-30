@@ -1,5 +1,8 @@
-<?php get_header(); ?>
-<main id="AboutUs" class="page light-mode">
+<?php
+    get_header();
+    $slug = get_post_field( 'post_name', get_post() );
+?>
+<main id="<?php echo esc_attr( $slug ); ?>" class="light-mode">
     <section id="title">
         <div class="container">
             <div class="inner_container">
