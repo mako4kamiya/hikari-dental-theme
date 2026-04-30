@@ -7,9 +7,9 @@ let isCLvisible = false;
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.target.id === 'MainVisual') {
+        if (entry.target.id === 'main-visual') {
             isMVvisible = entry.isIntersecting;
-        } else if (entry.target.id === 'Copylight') {
+        } else if (entry.target.id === 'copylight') {
             isCLvisible = entry.isIntersecting;
         }
     });
