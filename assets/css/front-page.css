@@ -105,10 +105,14 @@ div#features {
             gap: 2rem;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));;
             .card {
+                cursor: unset;
                 padding: 2rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                &:hover {
+                    background-color: var(--dark-mode-card-default);
+                }
                 gap: 2rem;
                 h3 {
                     color: var(--dark-mode-font2);
