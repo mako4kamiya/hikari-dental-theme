@@ -156,9 +156,21 @@
                     <h2 class="text-style-h1">お知らせ</h2>
                 </div>
                 <div class="links">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-style-a-regular">2026.02.05　休診日のご案内</a>
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-style-a-regular">2026.02.05　感染症対策について</a>
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-style-a-regular">2026.02.05　ホームページを開設しました</a>
+                    <?php
+                    $news_query = new WP_Query([
+                        'category_name'  => 'news',
+                        'posts_per_page' => 3,
+                    ]);
+
+                    while ($news_query->have_posts()) : $news_query->the_post();
+                    ?>
+                        <a href="<?php the_permalink(); ?>" class="text-style-a-regular">
+                            <?php echo get_the_date('Y.m.d'); ?>　<?php the_title(); ?>
+                        </a>
+                    <?php
+                    endwhile;
+                    wp_reset_postdata();
+                    ?>
                 </div>
             </div>
         </div>
