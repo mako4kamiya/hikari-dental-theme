@@ -27,6 +27,7 @@
 		wp_enqueue_style('footer-style', get_theme_file_uri('/assets/css/footer.css'), array(), filemtime(get_theme_file_path('/assets/css/footer.css')));
 		wp_enqueue_style('main-style', get_theme_file_uri('/assets/css/main.css'), array(), filemtime(get_theme_file_path('/assets/css/main.css')));
 		wp_enqueue_style('front-page-style', get_theme_file_uri('/assets/css/front-page.css'), array(), filemtime(get_theme_file_path('/assets/css/front-page.css')));
+		wp_enqueue_style('page-style', get_theme_file_uri('/assets/css/page.css'), array(), filemtime(get_theme_file_path('/assets/css/page.css')));
 		wp_enqueue_style('Libre Baskerville', 'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap', array(), null);
 	}
 	add_action('wp_enqueue_scripts', 'my_enqueue_assets');
