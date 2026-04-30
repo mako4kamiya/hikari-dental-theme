@@ -82,7 +82,7 @@
                 <p class="text-style-p-regular">※本サイトはデジタル庁デザインシステムを参考に制作しています。</p>
             </div>
             <a class="logo-footer" href="<?php echo home_url(); ?>"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/hikari-dental-logo-footer.png" alt="ひかりデンタルクリニックのロゴフッター"></a>
-            <small id="Copylight" class="copylight text-style-footer-regular">&copy; 2026 HIKARI DENTAL CLINIC. All Rights Reserved.</small>
+            <small id="copylight" text-style-footer-regular">&copy; 2026 HIKARI DENTAL CLINIC. All Rights Reserved.</small>
         </div>
     </footer>
     <?php wp_footer(); ?>

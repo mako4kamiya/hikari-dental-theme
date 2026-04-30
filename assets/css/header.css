@@ -12,8 +12,8 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        nav#HeaderNav {
-            ul#HeaderMenu {
+        nav#header-nav {
+            ul#header-menu {
                 padding: 0;
                 margin: 0;
                 list-style: none;

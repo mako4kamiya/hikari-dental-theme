@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main>
-    <div id="MainVisual" class="dark-mode">
+    <div id="main-visual" class="dark-mode">
         <div class="container">
             <div class="main_visual_container">
                 <div class="main_visual-left">
@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <div id="AboutUs" class="light-mode">
+    <div id="about-us" class="light-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="about_us-left">
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div id="Features" class="dark-mode">
+    <div id="features" class="dark-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="headings">
@@ -63,7 +63,7 @@
             </div>
         </div>
     </div>
-    <div id="Information" class="light-mode">
+    <div id="information" class="light-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="headings">
@@ -108,7 +108,7 @@
             </div>
         </div>
     </div>
-    <div id="Access" class="light-mode">
+    <div id="access" class="light-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="headings">
@@ -137,7 +137,7 @@
             <?php echo get_option('company_map'); ?>
         </div>
     </div>
-    <div id="ClinicHours" class="light-mode">
+    <div id="clinic-hours" class="light-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="headings">
@@ -148,7 +148,7 @@
             </div>
         </div>
     </div>
-    <div id="News" class="dark-mode">
+    <div id="news" class="dark-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="headings">

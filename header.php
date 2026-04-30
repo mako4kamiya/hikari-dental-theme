@@ -15,9 +15,9 @@
                         'menu' => 'header-menu',
                         'container' => 'nav',
                         'container_class' => 'header-nav',
-                        'container_id' => 'HeaderNav',
+                        'container_id' => 'header-nav',
                         'menu_class' => 'header-menu',
-                        'menu_id' => 'HeaderMenu',
+                        'menu_id' => 'header-menu',
                         'fallback_cb' => false,
                         'theme_location' => 'header-menu'
                     )

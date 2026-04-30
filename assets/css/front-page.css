@@ -1,4 +1,4 @@
-div#MainVisual {
+div#main-visual {
     min-height: 100svh;
     display: flex;
     &::before {
@@ -41,7 +41,7 @@ div#MainVisual {
         }
     }
 }
-div#AboutUs {
+div#about-us {
     min-height: 100svh;
     padding-top: 4rem;
     display: flex;
@@ -64,7 +64,7 @@ div#AboutUs {
         }
     }
 }
-div#Features {
+div#features {
     min-height: 100svh;
     padding-top: 4rem;
     display: flex;
@@ -118,7 +118,7 @@ div#Features {
         }
     }
 }
-div#Information {
+div#information {
     min-height: 100svh;
     padding-top: 4rem;
     display: flex;
@@ -168,7 +168,7 @@ div#Information {
         }
     }
 }
-div#Access {
+div#access {
     min-height: 100svh;
     padding-top: 4rem;
     display: flex;
@@ -186,7 +186,7 @@ div#Access {
         }
     }
 }
-div#ClinicHours {
+div#clinic-hours {
     min-height: 100svh;
     padding-top: 4rem;
     display: flex;
@@ -217,7 +217,7 @@ div#ClinicHours {
         }
     }
 }
-div#News {
+div#news {
     min-height: 100svh;
     padding-top: 4rem;
     display: flex;

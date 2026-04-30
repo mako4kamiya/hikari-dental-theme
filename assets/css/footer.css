@@ -34,7 +34,7 @@ footer {
             bottom: 4rem;
             right: 4rem;
         }
-        .copylight {
+        #copylight {
             display: block;
             text-align: center;
             padding-bottom: 1rem;

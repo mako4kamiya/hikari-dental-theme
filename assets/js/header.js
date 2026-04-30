@@ -1,6 +1,6 @@
 const Header = document.querySelector('header');
-const MainVisual = document.querySelector('#MainVisual');
-const Copylight = document.querySelector('#Copylight');
+const MainVisual = document.querySelector('#main-visual');
+const Copylight = document.querySelector('#copylight');
 
 let isMVvisible = false;
 let isCLvisible = false;
