@@ -150,6 +150,7 @@ div#Information {
             align-items: center;
             gap: 1rem;
             button {
+                cursor: pointer;
                 min-width: unset;
                 min-height: unset;
                 background-color: var(--neutral-light);

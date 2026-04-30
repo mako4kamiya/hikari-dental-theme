@@ -248,14 +248,16 @@ img.icon {
     width: 90px;
     height: 90px;
 }
-button {
-    cursor: pointer;
+a.button {
     min-width: 130px;
     min-height: 56px;
     padding: 1rem 2rem;
     border: 1px solid var(--neutral-gray);
+    text-decoration: unset;
+    display: flex;
+    align-items: center;
 }
-.dark-mode button {
+.dark-mode a.button {
     background-color: var(--dark-mode-button-default);
     color: var(--dark-mode-button-text);
     &:hover {
@@ -265,7 +267,7 @@ button {
         background-color: var(--dark-mode-button-active);
     }
 }
-.light-mode button {
+.light-mode a.button {
     background-color: var(--light-mode-button-default);
     color: var(--light-mode-button-text);
     &:hover {
