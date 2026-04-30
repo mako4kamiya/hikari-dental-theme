@@ -13,17 +13,17 @@
             </div>
         </div>
     </div>
-    <div id="about-us" class="light-mode">
+    <div id="about" class="light-mode">
         <div class="container">
             <div class="inner_container">
-                <div class="about_us-left">
+                <div class="about-left">
                     <div class="headings">
                         <h2 class="text-style-h1">チームで支える歯科医療</h2>
                     </div>
                     <p class="text-style-p-regular">歯科医師・スタッフが密に連携し、一人ひとりに寄り添った診療で、安心して通い続けられる診療体制を整えています。</p>
                     <a class="button text-style-button" href="<?php the_permalink(14); ?>">クリニック紹介を見る</a>
                 </div>
-                <img class="about_us-right" src="<?php echo get_theme_file_uri(); ?>/assets/images/top-page-about-us.jpg" alt="クリニック紹介">
+                <img class="about-right" src="<?php echo get_theme_file_uri(); ?>/assets/images/top-page-about.jpg" alt="クリニック紹介">
             </div>
         </div>
     </div>
