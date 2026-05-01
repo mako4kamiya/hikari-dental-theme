@@ -118,31 +118,24 @@
 			function() {
 				$clinic_hours_other = get_option( 'clinic_hours_other' );
 				$other_time = $clinic_hours_other ? 'その他の診療時間（'. $clinic_hours_other. '）' : 'その他の診療時間' ;
-				echo '<p>-：診療なし、○：診療あり、△：'. $other_time .'</p>';
+				echo '<p>／：診療なし、◯：診療あり、△：'. $other_time .'</p>';
 			},
 			'clinic-info'
-		);
-		$config = array(
-			'times' => ['am' => get_option( 'clinic_hours_am') ?: '午前', 'pm' => get_option( 'clinic_hours_pm') ?: '午後'],
-			'days'  => ['mon' => '月', 'tue' => '火', 'wed' => '水', 'thu' => '木', 'fri' => '金', 'sat' => '土', 'sun' => '日', 'holiday' => '祝'],
 		);
 		add_settings_field(
 			'clinic_weekly_hours_field',
 			'診療時間',
 			'clinic_weekly_hours_table_html',
 			'clinic-info',
-			'clinic_weekly_hours_section',
-			$config
+			'clinic_weekly_hours_section'
 		);
-		foreach ( $config['times'] as $t_key => $t_label ) {
-			foreach ( $config['days'] as $d_key => $d_label ) {
-				register_setting( 'register_clinic_info', "clinic_hours_{$d_key}_{$t_key}" );
-			}
-		}
-		function clinic_weekly_hours_table_html( $args ) {
-			$days = $args['days'];
-			$times = $args['times'];
-			$options_list = ['-', '○', '△'];
+		register_setting( 'register_clinic_info', 'clinic_hours' );
+
+		function clinic_weekly_hours_table_html() {
+			$current_data = get_option( 'clinic_hours', [] );
+			$days = ['mon' => '月', 'tue' => '火', 'wed' => '水', 'thu' => '木', 'fri' => '金', 'sat' => '土', 'sun' => '日', 'hol' => '祝'];
+			$times = ['am' => '午前', 'pm' => '午後'];
+			$options_list = ['／', '◯', '△'];
 			?>
 			<style>
 				table.clinic-hours { border-collapse: collapse; }
@@ -163,11 +156,11 @@
 						<th><?php echo esc_attr( $t_label ) ?></th>
 						<?php foreach( $days as $d_key => $d_label ) : ?>
 						<?php
-							$id = "clinic_hours_{$d_key}_{$t_key}";
-							$current_val = get_option( $id, '-' ); 
+							$current_val = $current_data[$t_key][$d_key] ?? '／';
+							$name_attr = "clinic_hours[{$t_key}][{$d_key}]";
 						?>
 						<td>
-							<select name="<?php echo esc_attr( $id ) ?>">
+							<select name="<?php echo esc_attr( $name_attr ) ?>">
 								<?php foreach( $options_list as $option ) : ?>
 								<option value="<?php echo esc_attr( $option ) ?>" <?php selected( $current_val, $option ); ?>>
 									<?php echo esc_attr( $option ) ?>
@@ -187,50 +180,75 @@
 
 
 
-
 	/**
 	 * 診療時間のショートコード
 	 */
 	function clinic_hours_table_html() {
-		$days = ['診療時間', '月', '火', '水', '木', '金', '土', '日', '祝'];
-		$clinic_hours = ['am' => get_option( 'clinic_hours_am') ?: '午前', 'pm' => get_option( 'clinic_hours_pm') ?: '午後'];
-		$clinic_hours_other = get_option( 'clinic_hours_other');
-		$clinic_weekly_schedule = ['mon_am' => '‐', 'tue_am' => '‐', 'wed_am' => '〇', 'thu_am' => '〇', 'fri_am' => '〇', 'sat_am' => '〇', 'sun_am' => '〇', 'holiday_am' => '〇'];
+		// 1. データの準備
+		$days_labels = ['mon' => '月', 'tue' => '火', 'wed' => '水', 'thu' => '木', 'fri' => '金', 'sat' => '土', 'sun' => '日', 'hol' => '祝'];
+		$times_labels = [
+			'am' => get_option('clinic_hours_am', '午前'), 
+			'pm' => get_option('clinic_hours_pm', '午後')
+		];
+		$clinic_hours_other = get_option('clinic_hours_other');
+		$schedule_data = get_option('clinic_hours', []);
+
+		// 2. 休診日テキストの生成ロジック
+		$closed_days_list = [];
+		foreach ( $days_labels as $d_key => $d_label ) {
+			$am_is_closed = ( ($schedule_data['am'][$d_key] ?? '／') === '／' );
+			$pm_is_closed = ( ($schedule_data['pm'][$d_key] ?? '／') === '／' );
+
+			if ( $am_is_closed && $pm_is_closed ) {
+				$closed_days_list[] = $d_label;
+			} elseif ( $am_is_closed ) {
+				$closed_days_list[] = $d_label . '午前';
+			} elseif ( $pm_is_closed ) {
+				$closed_days_list[] = $d_label . '午後';
+			}
+		}
+		$closed_text = !empty($closed_days_list) ? '休診日：' . implode('・', $closed_days_list) : '休診日：なし';
 
 		ob_start(); 
 		?>
-		<div>
+		<div class="clinic-table-wrapper">
 			<table>
 				<thead>
 					<tr>
-						<?php foreach( $days as $day ) : ?>
-						<th class="text-style-table-header"><?php echo esc_attr( $day ) ?></th>
+						<th class="text-style-table-header">診療時間</th>
+						<?php foreach( $days_labels as $label ) : ?>
+						<th class="text-style-table-header"><?php echo esc_html( $label ) ?></th>
 						<?php endforeach ?>
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach( $clinic_hours as $h_key => $h_label ) : ?>
+					<?php foreach( $times_labels as $t_key => $t_label ) : ?>
 					<tr>
-						<th class="text-style-table-header"><?php echo esc_attr( $h_label ) ?></th>
-						<?php foreach( $clinic_weekly_schedule as $w_key => $w_label ) : ?>
-							<td class="text-style-table-body"><?php echo esc_attr( $w_label ) ?></td>
+						<th class="text-style-table-header"><?php echo esc_html( $t_label ) ?></th>
+						<?php foreach( $days_labels as $d_key => $d_label ) : ?>
+							<td class="text-style-table-body">
+								<?php echo esc_html( $schedule_data[$t_key][$d_key] ?? '／' ); ?>
+							</td>
 						<?php endforeach ?>
 					</tr>
 					<?php endforeach ?>
 				</tbody>
 			</table>
-			<p class="text-style-table-header">
-				<?php
-					if ($clinic_hours_other !== '') {
-						echo '△・・・' . esc_attr($clinic_hours_other);
-					}
-				?>
-			</p>
+			
+			<div class="clinic-table-footer">
+				<?php if ( !empty($clinic_hours_other) ) : ?>
+					<p class="text-style-table-body">
+						△・・・<?php echo esc_html($clinic_hours_other); ?>の診療となります。
+					</p>
+				<?php endif; ?>
+				
+				<p class="text-style-table-body">
+					<?php echo esc_html($closed_text); ?>
+				</p>
+			</div>
 		</div>
 		<?php
-		$html = ob_get_clean();
-
-		return $html;
+		return ob_get_clean();
 	}
 	add_shortcode('clinic_table', 'clinic_hours_table_html');
 ?>
