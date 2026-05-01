@@ -134,7 +134,7 @@
             </div>
         </div>
         <div class="access_map">
-            <?php echo get_option('company_map'); ?>
+            <?php echo get_option('clinic_map'); ?>
         </div>
     </div>
     <div id="clinic-hours" class="light-mode">
