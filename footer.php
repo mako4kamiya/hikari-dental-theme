@@ -4,7 +4,7 @@
                 <div class="grid-container">
                     <div class="clinic-info">
                         <div class="headings">
-                            <h2 class="text-style-h2">ひかりデンタルクリニック</h2>
+                            <h2 class="text-style-h2"><?php bloginfo('name'); ?></h2>
                         </div>
                         <div>
                             <p class="text-style-p-regular">
@@ -29,34 +29,22 @@
                             <li class="text-style-p-regular">月・火・祝休診</li>
                         </ul>
                     </div>
-                    <div class="sitemap">
-                        <p class="text-style-p-bold">サイトマップ</p>
-                        <ul>
-                            <li class="text-style-p-regular">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">トップページ</a>
-                            </li>
-                            <li class="text-style-p-regular">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">クリニック紹介</a>
-                            </li>
-                            <li class="text-style-p-regular">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">診療案内</a>
-                            </li>
-                            <li class="text-style-p-regular">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">アクセス</a>
-                            </li>
-                            <li class="text-style-p-regular">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">診療時間</a>
-                            </li>
-                            <li class="text-style-p-regular">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">お知らせ</a>
-                            </li>
-                            <li class="text-style-p-regular">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">お問い合わせ</a>
-                            </li>
-                            <li class="text-style-p-regular">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">プライバシーポリシー</a>
-                            </li>
-                        </ul>
+                    <div class="sitelinks">
+                        <p class="text-style-p-bold"><?php bloginfo('name'); ?></p>
+                        <?php
+                        wp_nav_menu(
+                            array(
+                                'menu' => 'footer-menu',
+                                'container' => 'nav',
+                                'container_class' => 'footer-nav',
+                                'container_id' => 'footer-nav',
+                                'menu_class' => 'footer-menu',
+                                'menu_id' => 'footer-menu',
+                                'fallback_cb' => false,
+                                'theme_location' => 'footer-menu'
+                            )
+                        );
+                        ?>
                     </div>
                     <div class="info">
                         <p class="text-style-p-bold">診療案内</p>

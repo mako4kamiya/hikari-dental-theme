@@ -27,6 +27,13 @@ footer {
                         color: var(--light-mode-font2);
                     }
                 }
+                .footer-menu li {
+                    font-family: "Noto Serif JP", serif;
+                    font-weight: 400; /* Regular */
+                    font-size: 17px;
+                    line-height: 1.7;
+                    letter-spacing: 0.02em;
+                }
             }
         }
         .logo-footer {
