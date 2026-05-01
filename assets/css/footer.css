@@ -8,7 +8,7 @@ footer {
             padding: unset;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-evenly;
             .grid-container {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
