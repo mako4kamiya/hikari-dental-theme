@@ -44,5 +44,21 @@ body.page {
                 }
             }
         }
+        section#staff {
+            .staff-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                .staff-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1rem;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
 }

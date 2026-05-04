@@ -49,7 +49,17 @@
     <div class="container">
         <div class="inner_container">
             <div class="headings">
-                <h2 class="text-style-h2"></h2>
+                <h2 class="text-style-h2">スタッフ紹介</h2>
+            </div>
+            <div class="staff-list">
+                <div class="staff-item">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page-receptionist.jpg   " alt="受付スタッフの写真">
+                    <h3 class="text-style-p-bold">受付スタッフ</h3>
+                </div>
+                <div class="staff-item">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page-hygienist.jpg   " alt="歯科衛生士の写真">
+                    <h3 class="text-style-p-bold">歯科衛生士</h3>
+                </div>
             </div>
         </div>
     </div>
