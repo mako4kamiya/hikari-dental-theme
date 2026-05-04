@@ -6,18 +6,18 @@
                         <div class="headings">
                             <h2 class="text-style-h2"><?php bloginfo('name'); ?></h2>
                         </div>
-                        <div>
+                        <address>
                             <p class="text-style-p-regular">
                                 〒<?php echo esc_html(get_option('clinic_postal_code')); ?>
                                 <?php echo esc_html(get_option('clinic_address')); ?>
                             </p>
                             <p class="text-style-p-regular">
-                                <?php echo esc_html(get_option('clinic_nearest_station')); ?>
+                                <?php echo esc_html(get_option('clinic_tel')); ?>
                             </p>
                             <p class="text-style-p-regular">
                                 <?php echo esc_html(get_option('clinic_email')); ?>
                             </p>
-                        </div>
+                        </address>
                     </div>
                     <div class="clinic-hours">
                         <p class="text-style-p-bold">診療時間</p>

@@ -173,6 +173,9 @@ a {
         text-decoration-thickness: 0.2rem;
     }
 }
+address {
+    font-style: normal;
+}
 .dark-mode {
     background-color: var(--dark-mode-background);
     :focus {
