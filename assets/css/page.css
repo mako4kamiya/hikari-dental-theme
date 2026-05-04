@@ -16,30 +16,32 @@ body.page {
             }
         }
     }
-    section#greeting {
-        .greeting-message {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: center;
-            > div {
+    main#page-about {
+        section#greeting {
+            .greeting-message {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                align-items: center;
+                > div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                    text-align: center;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+            .director-history {
                 display: flex;
                 flex-direction: column;
                 gap: 2rem;
-                text-align: center;
-            }
-            img {
-                width: 100%;
-            }
-        }
-        .director-history {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            align-items: center;
-            .row {
-                display: flex;
-                gap: 1rem;
+                align-items: center;
+                .row {
+                    display: flex;
+                    gap: 1rem;
+                }
             }
         }
     }
