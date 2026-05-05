@@ -5,7 +5,7 @@
         <div class="container">
             <div class="main_visual_container">
                 <div class="main_visual-left">
-                    <a class="logo-mainvisual" href="<?php echo home_url(); ?>"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/hikari-dental-logo-mainvisual.png" alt="ひかりデンタルクリニックのロゴメインビジュアル"></a>
+                    <a class="logo-mainvisual" href="<?php echo home_url(); ?>"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/front-page/hikari-dental-logo-mainvisual.png" alt="ひかりデンタルクリニックのロゴメインビジュアル"></a>
                     <h1 class="text-style-main-copy">安心と信頼の<br>歯科医療</h1>
                     <p class="text-style-p-regular">一人ひとりのお悩みに真摯に向き合い、 安心して通い続けられる歯科クリニックを目指しています。</p>
                     <a class="button text-style-button" href="<?php the_permalink(14); ?>">クリニック紹介を見る</a>
@@ -23,7 +23,7 @@
                     <p class="text-style-p-regular">歯科医師・スタッフが密に連携し、一人ひとりに寄り添った診療で、安心して通い続けられる診療体制を整えています。</p>
                     <a class="button text-style-button" href="<?php the_permalink(14); ?>">クリニック紹介を見る</a>
                 </div>
-                <img class="about-right" src="<?php echo get_theme_file_uri(); ?>/assets/images/top-page-about.jpg" alt="クリニック紹介">
+                <img class="about-right" src="<?php echo get_theme_file_uri(); ?>/assets/images/front-page/medical-team.jpg" alt="クリニック紹介の写真">
             </div>
         </div>
     </div>

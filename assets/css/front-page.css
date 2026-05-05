@@ -8,7 +8,7 @@ div#main-visual {
         right: 0;
         left: 0;
         bottom: 0;
-        background-image: url("../images/mainvisual-bg.jpg");
+        background-image: url("../images/front-page/mv-dentist-patient-consultation.jpg");
         background-size: cover;
     }
     &::after {
@@ -76,7 +76,7 @@ div#features {
         right: 0;
         left: 0;
         bottom: 0;
-        background-image: url("../images/top-page-features.jpg");
+        background-image: url("../images/front-page/features-staff-discussion.jpg");
         background-size: cover;
     }
     &::after {
