@@ -104,8 +104,10 @@
     <div class="container">
         <div class="inner_container">
             <div class="headings">
-                <h2 class="text-style-h2"></h2>
+                <h2 class="text-style-h2">診療時間</h2>
+                <p class="text-style-subtitle">患者さまのライフスタイルに合わせて通院していただけるよう、診療時間を設けています。</p>
             </div>
+            <?php echo do_shortcode( '[clinic_table]' ); ?>
         </div>
     </div>
 </section>
