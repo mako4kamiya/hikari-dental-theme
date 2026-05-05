@@ -245,6 +245,13 @@ address {
 .headings h1, .headings h2, .headings h3 {
     margin-bottom: 1rem;
 }
+section#title {
+    min-height: auto;
+    padding-top: 4rem;
+    div.headings {
+        text-align: center;
+    }
+}
 section#breadcrumb {
     min-height: auto;
     ol.breadcrumb-list {

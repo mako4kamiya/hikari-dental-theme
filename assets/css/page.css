@@ -1,8 +1,5 @@
 /* 固定ページ共通 */
 body.page {
-    section#title {
-        min-height: auto;
-    }
     section {
         min-height: 100svh;
         padding-top: 4rem;
