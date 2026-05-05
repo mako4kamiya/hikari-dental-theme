@@ -203,21 +203,6 @@ div#clinic-hours {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            table {
-                border-collapse: collapse;
-                th, td {
-                    border: 1px solid var(--neutral-gray);
-                    text-align: center;
-                    align-content: center;
-                    padding: 5px;
-                }
-                th {
-                    padding: 12px 1em;
-                }
-                td {
-                    padding: 20px 1em;
-                }
-            }
         }
     }
 }
