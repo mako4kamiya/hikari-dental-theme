@@ -245,6 +245,17 @@ address {
 .headings h1, .headings h2, .headings h3 {
     margin-bottom: 1rem;
 }
+section#breadcrumb {
+    min-height: auto;
+    ol.breadcrumb-list {
+        display: flex;
+        gap: 0.5rem;
+        li:not(:last-child)::after {
+            content: ">";
+            padding-left: 0.5rem;
+        }
+    }
+}
 
 /* コンポーネント */
 img.icon {

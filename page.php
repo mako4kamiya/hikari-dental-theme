@@ -15,5 +15,6 @@
         </div>
     </section>
     <?php get_template_part('template-parts/page', $slug); ?>
+    <?php get_template_part('template-parts/breadcrumb'); ?>
 </main>
 <?php get_footer(); ?>

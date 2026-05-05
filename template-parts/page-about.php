@@ -111,12 +111,3 @@
         </div>
     </div>
 </section>
-<section id="breadcrumb">
-    <div class="container">
-        <div class="inner_container">
-            <div class="headings">
-                <h2 class="text-style-h2"></h2>
-            </div>
-        </div>
-    </div>
-</section>
