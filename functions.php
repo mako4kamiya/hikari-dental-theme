@@ -49,6 +49,41 @@
 
 
 	/**
+	 * 診療内容のカスタム投稿タイプを追加
+	 */
+	function create_post_type_information() {
+		register_post_type( 'information',
+			array(
+				'labels' => array(
+					'name'          => '診療内容',
+					'singular_name' => '診療内容',
+					'add_new_item'	=> '診療内容を追加',
+					'edit_item'   	=> '診療内容を編集',
+					'all_items'   	=> '診療内容一覧',
+					'search_items'	=> '診療内容を検索',
+					'not_found'   	=> '診療内容は見つかりませんでした',
+					'item_published'=> '診療内容を公開しました。',
+					'item_published_privately' => '診療内容を非公開で公開しました',
+					'item_reverted_to_draft'   => '診療内容を下書きに戻しました',
+					'item_scheduled'           => '診療内容を予約しました',
+					'item_updated'	=> '診療内容を更新しました。',
+					'view_item'		=> '診療内容を表示',
+					'new_item'		=> '新規診療内容',
+				),
+				'public'        => true,
+				'has_archive'   => true,
+				'menu_icon'		=> 'dashicons-info',
+				'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+				'menu_position' => 5,
+				'show_in_rest'  => true,  // 【重要】ブロックエディタ(Gutenberg)を有効にする
+			)
+		);
+	}
+	add_action( 'init', 'create_post_type_information' );
+
+
+
+	/**
 	 * 管理画面のメニュー追加
 	 */
 	function my_clinic_info() {
