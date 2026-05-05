@@ -23,7 +23,7 @@
                         皆さまのご来院を心よりお待ちしております。
                     </p>
                 </div>
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page-hikaru-hoshino.jpg   " alt="院長星野ひかるの顔写真">
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/hikaru-hoshino.jpg   " alt="院長星野ひかるの顔写真">
             </div>
             <div class="director-history">
                 <h3 class="text-style-p-bold">院長　星野 ひかる</h3>
@@ -53,11 +53,11 @@
             </div>
             <div class="staff-list">
                 <div class="staff-item">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page-receptionist.jpg   " alt="受付スタッフの写真">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/staff-receptionist.jpg   " alt="受付スタッフの写真">
                     <h3 class="text-style-p-bold">受付スタッフ</h3>
                 </div>
                 <div class="staff-item">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page-hygienist.jpg   " alt="歯科衛生士の写真">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/staff-hygienist.jpg   " alt="歯科衛生士の写真">
                     <h3 class="text-style-p-bold">歯科衛生士</h3>
                 </div>
             </div>
@@ -68,7 +68,34 @@
     <div class="container">
         <div class="inner_container">
             <div class="headings">
-                <h2 class="text-style-h2"></h2>
+                <h2 class="text-style-h2">設備紹介</h2>
+                <p class="text-style-subtitle">清潔で落ち着いた院内環境と衛生管理を徹底し、安心して通っていただける診療環境づくりに努めています。</p>
+            </div>
+            <div class="facility-list">
+                <div class="waiting-room">
+                    <div class="headings">
+                        <h2 class="text-style-h3">待合室</h2>
+                    </div>
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/facilities-waiting-room.jpg" alt="待合室の写真">
+                </div>
+                <div class="treatment-room">
+                    <div class="headings">
+                        <h2 class="text-style-h3">診療室</h2>
+                    </div>
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/facilities-treatment-room.jpg" alt="診療室の写真">
+                </div>
+                <div class="sterilization">
+                    <div class="headings">
+                        <h2 class="text-style-h3">衛生管理</h2>
+                    </div>
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/facilities-sterilization.jpg" alt="衛生管理の写真">
+                </div>
+                <div class="powder-room">
+                    <div class="headings">
+                        <h2 class="text-style-h3">パウダールーム</h2>
+                    </div>
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/facilities-powder-room.jpg" alt="パウダールームの写真">
+                </div>
             </div>
         </div>
     </div>

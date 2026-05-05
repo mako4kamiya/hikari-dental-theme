@@ -60,5 +60,15 @@ body.page {
                 }
             }
         }
+        section#facilities {
+            .facility-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                div.headings {
+                    text-align: start;
+                }
+            }
+        }
     }
 }
