@@ -6,7 +6,7 @@
         <?php wp_head( ); ?>
     </head>
     <body <?php body_class(); ?>>
-        <header>
+        <header id="site-header">
             <div>
                 <?php the_custom_logo(); ?>
                 <?php

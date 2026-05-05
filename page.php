@@ -4,7 +4,7 @@
     $shoulder = ucwords(str_replace('-', ' ', $slug));
 ?>
 <main id="page-<?php echo esc_attr($slug); ?>" class="light-mode">
-    <section id="title">
+    <header id="entry-header">
         <div class="container">
             <div class="inner_container">
                 <div class="headings">
@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </header>
     <?php get_template_part('template-parts/page', $slug); ?>
     <?php get_template_part('template-parts/breadcrumb'); ?>
 </main>
