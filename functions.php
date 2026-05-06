@@ -71,6 +71,7 @@
 					'view_item'		=> '診療内容を表示',
 					'new_item'		=> '新規診療内容',
 				),
+				'description' => '幅広い診療に対応し、お悩みに合わせた治療をご提案します。',
 				'public'        => true,
 				'has_archive'   => true,
 				'menu_icon'		=> 'dashicons-info',
