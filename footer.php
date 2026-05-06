@@ -82,21 +82,20 @@
                     <div class="info">
                         <p class="text-style-p-bold">診療案内</p>
                         <ul>
-                            <li class="text-style-p-regular">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">一般歯科</a>
-                            </li>
-                            <li class="text-style-p-regular">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">予防歯科</a>
-                            </li>
-                            <li class="text-style-p-regular">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">小児歯科</a>
-                            </li>
-                            <li class="text-style-p-regular">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">審美歯科</a>
-                            </li>
-                            <li class="text-style-p-regular">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">ホワイトニング</a>
-                            </li>
+                            <?php
+                            $info_query = new WP_Query([
+                                'post_type'      => 'information',
+                            ]);
+
+                            while ($info_query->have_posts()) : $info_query->the_post();
+                            ?>
+                                <li class="text-style-p-regular">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </li>
+                            <?php
+                            endwhile;
+                            wp_reset_postdata();
+                            ?>
                         </ul>
                     </div>
                 </div>
