@@ -23,7 +23,7 @@
                         皆さまのご来院を心よりお待ちしております。
                     </p>
                 </div>
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/hikaru-hoshino.jpg   " alt="院長星野ひかるの顔写真">
+                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about/hikaru-hoshino.jpg   " alt="院長星野ひかるの顔写真">
             </div>
             <div class="director-history">
                 <h3 class="text-style-p-bold">院長　星野 ひかる</h3>
@@ -53,11 +53,11 @@
             </div>
             <div class="staff-list">
                 <div class="staff-item">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/staff-receptionist.jpg   " alt="受付スタッフの写真">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about/staff-receptionist.jpg   " alt="受付スタッフの写真">
                     <h3 class="text-style-p-bold">受付スタッフ</h3>
                 </div>
                 <div class="staff-item">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/staff-hygienist.jpg   " alt="歯科衛生士の写真">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about/staff-hygienist.jpg   " alt="歯科衛生士の写真">
                     <h3 class="text-style-p-bold">歯科衛生士</h3>
                 </div>
             </div>
@@ -76,25 +76,25 @@
                     <div class="headings">
                         <h2 class="text-style-h3">待合室</h2>
                     </div>
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/facilities-waiting-room.jpg" alt="待合室の写真">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about/facilities-waiting-room.jpg" alt="待合室の写真">
                 </div>
                 <div class="treatment-room">
                     <div class="headings">
                         <h2 class="text-style-h3">診療室</h2>
                     </div>
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/facilities-treatment-room.jpg" alt="診療室の写真">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about/facilities-treatment-room.jpg" alt="診療室の写真">
                 </div>
                 <div class="sterilization">
                     <div class="headings">
                         <h2 class="text-style-h3">衛生管理</h2>
                     </div>
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/facilities-sterilization.jpg" alt="衛生管理の写真">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about/facilities-sterilization.jpg" alt="衛生管理の写真">
                 </div>
                 <div class="powder-room">
                     <div class="headings">
                         <h2 class="text-style-h3">パウダールーム</h2>
                     </div>
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about-page/facilities-powder-room.jpg" alt="パウダールームの写真">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about/facilities-powder-room.jpg" alt="パウダールームの写真">
                 </div>
             </div>
         </div>
