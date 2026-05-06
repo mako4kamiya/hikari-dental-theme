@@ -64,41 +64,35 @@
         </div>
     </div>
     <div id="information" class="light-mode">
+        <?php
+            $post_type_obj = get_post_type_object('information');
+            $post_type_label = $post_type_obj->label;
+            $post_type_desc = $post_type_obj->description; 
+        ?>
         <div class="container">
             <div class="inner_container">
                 <div class="headings">
                     <p class="text-style-shoulder">Information</p>
-                    <h2 class="text-style-h1">診療案内</h2>
-                    <p class="text-style-subtitle">幅広い診療に対応し、お悩みに合わせた治療をご提案します。</p>
+                    <h2 class="text-style-h1"><?php echo esc_html($post_type_label); ?></h2>
+                    <p class="text-style-subtitle"><?php echo esc_html($post_type_desc); ?></p>
                 </div>
                 <div class="cards">
+                    <?php
+                        $info_query = new WP_Query([
+                            'post_type'      => 'information',
+                        ]);
+                        while ($info_query->have_posts()) : $info_query->the_post();
+                    ?>
                     <div class="card card">
                         <div class="headings">
-                            <h3 class="text-style-h2">一般歯科</h3>
+                            <h3 class="text-style-h2"><?php the_title(); ?></h3>
                         </div>
-                        <img class="icon" src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-general.png" alt="一般歯科のアイコン">
+                        <img class="icon" src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-general.png" alt="<?php the_title(); ?>のアイコン">
                         <p class="text-style-p-regular">
-                            虫歯や歯周病など、お口の健康を守る基本的な治療を行います。
+                            <?php echo get_the_excerpt(); ?>
                         </p>
                     </div>
-                    <div class="card card">
-                        <div class="headings">
-                            <h3 class="text-style-h2">予防歯科</h3>
-                        </div>
-                        <img class="icon" src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-preventive.png" alt="予防歯科のアイコン"></i>
-                        <p class="text-style-p-regular">
-                            健康な歯を守るためのクリーニングや定期検診を行います。
-                        </p>
-                    </div>
-                    <div class="card card">
-                        <div class="headings">
-                            <h3 class="text-style-h2">小児歯科</h3>
-                        </div>
-                        <img class="icon" src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-pedodontic.png" alt="小児歯科のアイコン"></i>
-                        <p class="text-style-p-regular">
-                            お子さまの成長に合わせたやさしい歯科診療を行います。
-                        </p>
-                    </div>
+                    <?php endwhile; wp_reset_postdata(); ?>
                 </div>
                 <div class="page-navigation">
                     <button type="button">&lt;</button>
