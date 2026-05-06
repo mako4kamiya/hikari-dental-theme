@@ -72,7 +72,7 @@
                     <p class="text-style-subtitle">幅広い診療に対応し、お悩みに合わせた治療をご提案します。</p>
                 </div>
                 <div class="cards">
-                    <div class="card card1">
+                    <div class="card card">
                         <div class="headings">
                             <h3 class="text-style-h2">一般歯科</h3>
                         </div>
@@ -81,7 +81,7 @@
                             虫歯や歯周病など、お口の健康を守る基本的な治療を行います。
                         </p>
                     </div>
-                    <div class="card card2">
+                    <div class="card card">
                         <div class="headings">
                             <h3 class="text-style-h2">予防歯科</h3>
                         </div>
@@ -90,7 +90,7 @@
                             健康な歯を守るためのクリーニングや定期検診を行います。
                         </p>
                     </div>
-                    <div class="card card3">
+                    <div class="card card">
                         <div class="headings">
                             <h3 class="text-style-h2">小児歯科</h3>
                         </div>

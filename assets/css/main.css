@@ -39,12 +39,8 @@
     --light-mode-button-active: var(--primitive-gold-l71);
     --light-mode-button-focus-outline: var(--neutral-dark);
     --light-mode-button-focus-shadow: var(--neutral-light);
-    --light-mode-card-default1: var(--primitive-gold-d77);
-    --light-mode-card-hover1: rgb(205 173 125 / 80%);
-    --light-mode-card-default2: var(--primitive-gold-d93);
-    --light-mode-card-hover2: rgb(219 191 148 / 80%);
-    --light-mode-card-default3: var(--primitive-gold-d86);
-    --light-mode-card-hover3: rgb(232 209 174 / 80%);
+    --light-mode-card-default: var(--primitive-gold-d77);
+    --light-mode-card-hover: rgb(205 173 125 / 80%);
 }
 
 /* フォントに関するスタイル */
@@ -310,22 +306,10 @@ a.button {
     }
 
 }
-.light-mode .card1 {
-    background-color: var(--light-mode-card-default1);
+.light-mode .card {
+    background-color: var(--light-mode-card-default);
     &:hover {
-        background-color: var(--light-mode-card-hover1);
-    }
-}
-.light-mode .card2 {
-    background-color: var(--light-mode-card-default2);
-    &:hover {
-        background-color: var(--light-mode-card-hover2);
-    }
-}
-.light-mode .card3 {
-    background-color: var(--light-mode-card-default3);
-    &:hover {
-        background-color: var(--light-mode-card-hover3);
+        background-color: var(--light-mode-card-hover);
     }
 }
 
