@@ -80,13 +80,16 @@
                         ?>
                     </div>
                     <div class="info">
-                        <p class="text-style-p-bold">診療案内</p>
+                        <?php
+                            $post_type_obj = get_post_type_object('information');
+                            $post_type_label = $post_type_obj->label;
+                        ?>
+                        <p class="text-style-p-bold"><?php echo esc_html($post_type_label); ?></p>
                         <ul>
                             <?php
                             $info_query = new WP_Query([
                                 'post_type'      => 'information',
                             ]);
-
                             while ($info_query->have_posts()) : $info_query->the_post();
                             ?>
                                 <li class="text-style-p-regular">
