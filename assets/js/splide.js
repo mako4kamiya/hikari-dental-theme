@@ -1,0 +1,1 @@
+console.log("splide.jsが読み込まれました");
