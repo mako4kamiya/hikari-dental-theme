@@ -83,7 +83,7 @@
                         ]);
                         while ($info_query->have_posts()) : $info_query->the_post();
                     ?>
-                    <div class="card card">
+                    <a href="<?php the_permalink(); ?>" class="card">
                         <div class="headings">
                             <h3 class="text-style-h2"><?php the_title(); ?></h3>
                         </div>
@@ -91,7 +91,7 @@
                         <p class="text-style-p-regular">
                             <?php echo get_the_excerpt(); ?>
                         </p>
-                    </div>
+                    </a>
                     <?php endwhile; wp_reset_postdata(); ?>
                 </div>
                 <div class="page-navigation">

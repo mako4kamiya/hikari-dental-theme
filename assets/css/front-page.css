@@ -136,13 +136,14 @@ div#information {
             display: grid;
             gap: 2rem;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            .card {
+            a.card {
                 padding: 2rem;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 gap: 2rem;
+                text-decoration: unset;
                 h3 {
                     text-align: center;
                 }
