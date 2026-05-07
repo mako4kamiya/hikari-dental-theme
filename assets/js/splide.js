@@ -1,1 +1,8 @@
-console.log("splide.jsが読み込まれました");
+var splide = new Splide( '.splide', {
+  type   : 'loop',
+  perPage: 3,
+  perMove: 1,
+  gap    : '2rem'
+} );
+
+splide.mount();

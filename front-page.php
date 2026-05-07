@@ -76,6 +76,29 @@
                     <h2 class="text-style-h1"><?php echo esc_html($post_type_label); ?></h2>
                     <p class="text-style-subtitle"><?php echo esc_html($post_type_desc); ?></p>
                 </div>
+                <section class="splide" aria-label="診療一覧">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <?php
+                                $info_query = new WP_Query([
+                                    'post_type'      => 'information',
+                                ]);
+                                while ($info_query->have_posts()) : $info_query->the_post();
+                            ?>
+                            <li class="splide__slide">
+                                <a href="<?php the_permalink(); ?>" class="slidecard">
+                                    <div class="headings">
+                                        <h3 class="text-style-h2"><?php the_title(); ?></h3>
+                                    </div>
+                                    <p class="text-style-p-regular">
+                                        <?php echo get_the_excerpt(); ?>
+                                    </p>
+                                </a>
+                            </li>
+                            <?php endwhile; wp_reset_postdata(); ?>
+                        </ul>
+                    </div>
+                </section>
                 <div class="cards">
                     <?php
                         $info_query = new WP_Query([
