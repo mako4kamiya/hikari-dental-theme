@@ -105,15 +105,9 @@ div#features {
             gap: 2rem;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));;
             .card {
-                cursor: unset;
-                padding: 2rem;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
                 &:hover {
                     background-color: var(--dark-mode-card-default);
                 }
-                gap: 2rem;
                 h3 {
                     color: var(--dark-mode-font2);
                     text-align: center;
@@ -131,22 +125,25 @@ div#information {
         flex-direction: column;
         justify-content: center;
         gap: 2rem;
-        .cards {
-            flex: 1;
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            a.card {
-                padding: 2rem;
+        section.splide {
+            display: flex;
+            flex-direction: column;
+            .splide__arrows {
                 display: flex;
-                flex-direction: column;
-                align-items: center;
                 justify-content: center;
-                gap: 2rem;
-                text-decoration: unset;
-                h3 {
-                    text-align: center;
+                align-items: center;
+                gap: 6rem;
+                .arrow {
+                    position: relative;
+                    transform: unset;
                 }
+            }
+            .splide__pagination {
+                counter-reset: pagination-num;
+            }
+            .splide__pagination__page:before {
+                counter-increment: pagination-num;
+                content: counter( pagination-num );
             }
         }
         .page-navigation {

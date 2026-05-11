@@ -297,13 +297,15 @@ a.button {
     }
 }
 
-.slidecard {
+.card {
     border: 1px solid var(--neutral-gray);
     text-decoration: unset;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 2rem;
+    gap: 2rem;
 }
 .dark-mode .card {
     background-color: var(--dark-mode-card-default);

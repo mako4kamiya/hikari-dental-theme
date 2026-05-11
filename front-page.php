@@ -86,7 +86,7 @@
                                 while ($info_query->have_posts()) : $info_query->the_post();
                             ?>
                             <li class="splide__slide">
-                                <a href="<?php the_permalink(); ?>" class="slidecard">
+                                <a href="<?php the_permalink(); ?>" class="card">
                                     <div class="headings">
                                         <h3 class="text-style-h2"><?php the_title(); ?></h3>
                                     </div>
@@ -98,30 +98,13 @@
                             <?php endwhile; wp_reset_postdata(); ?>
                         </ul>
                     </div>
+                    <div class="splide__arrows"><ul class="splide__pagination"></ul></div>
                 </section>
-                <div class="cards">
-                    <?php
-                        $info_query = new WP_Query([
-                            'post_type'      => 'information',
-                        ]);
-                        while ($info_query->have_posts()) : $info_query->the_post();
-                    ?>
-                    <a href="<?php the_permalink(); ?>" class="card">
-                        <div class="headings">
-                            <h3 class="text-style-h2"><?php the_title(); ?></h3>
-                        </div>
-                        <img class="icon" src="<?php echo get_theme_file_uri(); ?>/assets/images/icon-general.png" alt="<?php the_title(); ?>のアイコン">
-                        <p class="text-style-p-regular">
-                            <?php echo get_the_excerpt(); ?>
-                        </p>
-                    </a>
-                    <?php endwhile; wp_reset_postdata(); ?>
-                </div>
-                <div class="page-navigation">
+                <!-- <div class="page-navigation">
                     <button type="button">&lt;</button>
                     <p class="text-style-subtitle">1 / 5</p>
                     <button type="button">&gt;</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
