@@ -133,9 +133,11 @@ div#information {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 6rem;
+                gap: 1rem;
                 .splide__arrow {
                     position: relative;
+                    left: unset;
+                    right: unset;
                     height: 3em;
                     width: 3em;
                     background: transparent;
