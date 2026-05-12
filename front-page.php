@@ -98,7 +98,7 @@
                             <?php endwhile; wp_reset_postdata(); ?>
                         </ul>
                     </div>
-                    <div class="splide__arrows"><ul class="splide__pagination"></ul></div>
+                    <div class="splide__arrows"></div>
                 </section>
             </div>
         </div>

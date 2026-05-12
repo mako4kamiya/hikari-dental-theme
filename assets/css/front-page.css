@@ -134,7 +134,7 @@ div#information {
                 justify-content: center;
                 align-items: center;
                 gap: 6rem;
-                .arrow {
+                .splide__arrow {
                     position: relative;
                     height: 3em;
                     width: 3em;
@@ -148,35 +148,6 @@ div#information {
                         fill: var(--neutral-dark);
                     }
                 }
-            }
-            .splide__pagination {
-                counter-reset: pagination-num;
-            }
-            .splide__pagination__page:before {
-                counter-increment: pagination-num;
-                content: counter( pagination-num );
-            }
-        }
-        .page-navigation {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            button {
-                cursor: pointer;
-                min-width: unset;
-                min-height: unset;
-                background-color: var(--neutral-light);
-                color: var(--light-mode-font1);
-                border: 1px solid var(--light-mode-font1);
-                border-radius: 50%;
-                font-size: 2rem;
-                width: 3rem;
-                height: 3rem;
-                padding: 1rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
             }
         }
     }
