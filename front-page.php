@@ -100,11 +100,6 @@
                     </div>
                     <div class="splide__arrows"><ul class="splide__pagination"></ul></div>
                 </section>
-                <!-- <div class="page-navigation">
-                    <button type="button">&lt;</button>
-                    <p class="text-style-subtitle">1 / 5</p>
-                    <button type="button">&gt;</button>
-                </div> -->
             </div>
         </div>
     </div>
