@@ -27,6 +27,9 @@ header#site-header {
                             text-decoration: underline;
                         }
                     }
+                    ul.sub-menu {
+                        display: none;
+                    }
                 }
             }
         }
