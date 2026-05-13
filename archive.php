@@ -3,7 +3,7 @@
     $post_type_obj = get_queried_object();
     $post_type_name = $post_type_obj->name;
 ?>
-<main id="page-<?php echo esc_attr($post_type_name); ?>" class="light-mode">
+<main id="archive-<?php echo esc_attr($post_type_name); ?>" class="light-mode">
     <header id="entry-header">
         <div class="container">
             <div class="inner_container">

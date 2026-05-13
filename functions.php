@@ -34,6 +34,7 @@
 		wp_enqueue_style('main-style', get_theme_file_uri('/assets/css/main.css'), array(), filemtime(get_theme_file_path('/assets/css/main.css')));
 		wp_enqueue_style('front-page-style', get_theme_file_uri('/assets/css/front-page.css'), array(), filemtime(get_theme_file_path('/assets/css/front-page.css')));
 		wp_enqueue_style('page-style', get_theme_file_uri('/assets/css/page.css'), array(), filemtime(get_theme_file_path('/assets/css/page.css')));
+		wp_enqueue_style('archive-style', get_theme_file_uri('/assets/css/archive.css'), array(), filemtime(get_theme_file_path('/assets/css/archive.css')));
 		wp_enqueue_style('single-style', get_theme_file_uri('/assets/css/single.css'), array(), filemtime(get_theme_file_path('/assets/css/single.css')));
 		wp_enqueue_style('Libre Baskerville', 'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap', array(), null);
 	}
