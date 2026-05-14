@@ -1,23 +1,22 @@
-<?php
-    get_header();
-    $post_type = get_post_type();
-    $slug = get_post_field('post_name', get_the_ID());
-    $shoulder = ucwords(str_replace('-', ' ', $slug));
-?>
-<main id="single-<?php echo esc_attr($post_type); ?>" class="light-mode">
-    <article>
-        <header id="entry-header">
-            <div class="container">
-                <div class="inner_container">
-                    <div class="headings">
-                        <p class="text-style-shoulder"><?php echo esc_html($shoulder); ?></p>
-                        <h1 class="text-style-h1"><?php the_title(); ?></h1>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <?php get_template_part('template-parts/single', $post_type); ?>
-    </article>
-    <?php get_template_part('template-parts/breadcrumb'); ?>
+<?php get_header(); ?>
+
+<main class="light-mode">
+    <?php
+    if ( have_posts() ) : while ( have_posts() ) : the_post();
+        // 1. 現在の投稿タイプを取得
+        $post_type = get_post_type();
+        // 2. 通常の投稿（post）の場合
+        if ( 'post' === $post_type ) {
+            $categories = get_the_category();
+            $file_suffix = !empty($categories) ? $categories[0]->slug : '';
+        } else {
+            // 3. カスタム投稿タイプの場合
+            $file_suffix = $post_type;
+        }
+    ?>
+        <?php get_template_part('template-parts/header-entry'); ?>
+        <?php get_template_part('template-parts/single', $file_suffix); ?>
+    <?php endwhile; endif; ?>
 </main>
+
 <?php get_footer(); ?>
