@@ -6,7 +6,7 @@
 <main id="category-<?php echo esc_attr($post_type_name); ?>" class="light-mode">
     <?php get_template_part('template-parts/header-entry'); ?>
 
-    <section>
+    <section id="<?php echo esc_attr($post_type_name); ?>">
         <div class="container">
             <div class="inner_container">
                 <?php if (have_posts()) : ?>
