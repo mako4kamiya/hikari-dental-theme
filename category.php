@@ -1,7 +1,7 @@
 <?php
     get_header();
     $post_type_obj = get_queried_object();
-    $post_type_name = $post_type_obj->name;
+    $post_type_name = $post_type_obj->slug;
 ?>
 <main id="category-<?php echo esc_attr($post_type_name); ?>" class="light-mode">
     <?php get_template_part('template-parts/header-entry'); ?>
