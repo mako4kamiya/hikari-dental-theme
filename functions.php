@@ -90,9 +90,6 @@
 		);
 	}
 	add_action( 'init', 'create_post_type_information' );
-
-
-
 	/**
 	 * 管理画面のメニュー追加
 	 */
@@ -106,6 +103,7 @@
 			);
 	}
 	add_action('admin_menu', 'my_clinic_info');
+
 	// 管理画面の表示
 	function clinic_settings_page_html() {
 		?>
@@ -121,6 +119,7 @@
 		</div>
 		<?php
 	}
+
 	// 情報の登録
 	function clinic_register_settings() {
 		// クリニック基本情報
@@ -154,7 +153,6 @@
 			);
 			register_setting( 'register_clinic_info', $id );
 		}
-
 
 		// 各曜日ごとの診療の有無
 		add_settings_section(
@@ -296,4 +294,73 @@
 		return ob_get_clean();
 	}
 	add_shortcode('clinic_table', 'clinic_hours_table_html');
+
+
+
+	/**
+	 * ページに応じたショルダーテキスト（小見出し）を取得する
+	 */
+	function get_my_entry_shoulder() {
+		$shoulder = '';
+
+		if ( is_single() ) {
+			$post_type = get_post_type();
+			if ( 'post' === $post_type ) {
+				// 通常投稿ならカテゴリーのスラッグ
+				$categories = get_the_category();
+				if ( ! empty( $categories ) ) {
+					$shoulder = $categories[0]->slug;
+				}
+			} else {
+				// カスタム投稿タイプならその投稿（カスタム投稿タイプ）のスラッグ
+				$post_type_object = get_post_type_object( $post_type );
+				if ( $post_type_object ) {
+					$shoulder = $post_type_object->name;
+				}
+			}
+		} elseif ( is_page() ) {
+			// 固定ページのスラッグ
+			global $post;
+			$shoulder = isset( $post->post_name ) ? $post->post_name : '';
+		} elseif ( is_category() ) {
+			// カテゴリー一覧のスラッグ
+			$queried_object = get_queried_object();
+			$shoulder = isset( $queried_object->slug ) ? $queried_object->slug : '';
+		} elseif ( is_tag() ) {
+			// タグのスラッグ
+			$queried_object = get_queried_object();
+			$shoulder = isset( $queried_object->slug ) ? $queried_object->slug : '';
+		} elseif ( is_archive() ) {
+			// アーカイブページ（カスタム投稿タイプの一覧など）
+			$queried_object = get_queried_object();
+			if ( isset( $queried_object->name ) ) {
+				$shoulder = $queried_object->name;
+			}
+		} elseif ( is_search() ) {
+			$shoulder = 'Search Result';
+		} elseif ( is_404() ) {
+			$shoulder = 'Page Not Found';
+		}
+
+		// ハイフンをスペースに置換し、各単語の先頭を大文字にする（例: about-us -> About Us）
+		$shoulder = str_replace( '-', ' ', $shoulder );
+		return ucwords( $shoulder );
+	}
+
+
+
+	/**
+	 * ページに応じたメインタイトルを取得する
+	 */
+	function get_my_entry_title() {
+		if ( is_search() ) {
+			return sprintf( '「%s」の検索結果', get_search_query() );
+		} elseif ( is_404() ) {
+			return 'ページが見つかりません';
+		} elseif ( is_archive() ) {
+			return get_the_archive_title();
+		}
+		return get_the_title();
+	}
+
 ?>
