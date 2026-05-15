@@ -15,6 +15,7 @@
         </div>
     </header>
     <?php get_template_part('template-parts/archive', $post_type_name); ?>
+    <?php get_template_part('template-parts/header-entry'); ?>
     <?php get_template_part('template-parts/breadcrumb'); ?>
 </main>
 <?php get_footer(); ?>
