@@ -301,41 +301,20 @@
 	 * ページに応じたショルダーテキスト（小見出し）を取得する
 	 */
 	function get_my_entry_shoulder() {
-		$shoulder = '';
-
-		if ( is_single() ) {
-			$post_type = get_post_type();
-			if ( 'post' === $post_type ) {
-				// 通常投稿ならカテゴリーのスラッグ
-				$categories = get_the_category();
-				if ( ! empty( $categories ) ) {
-					$shoulder = $categories[0]->slug;
-				}
-			} else {
-				// カスタム投稿タイプならその投稿のスラッグ
-				global $post;
-				$shoulder = isset( $post->post_name ) ? $post->post_name : '';
-			}
-		} elseif ( is_page() ) {
-			// 固定ページのスラッグ
-			global $post;
-			$shoulder = isset( $post->post_name ) ? $post->post_name : '';
-		} elseif ( is_archive() ) {
-			// カテゴリー一覧のスラッグ
-			$queried_object = get_queried_object();
-			$shoulder = isset( $queried_object->slug ) ? $queried_object->slug : '';
-		// } elseif ( is_category() ) {
-		// 	// カテゴリー一覧のスラッグ
-		// 	$queried_object = get_queried_object();
-		// 	$shoulder = isset( $queried_object->slug ) ? $queried_object->slug : '';
-		// } elseif ( is_post_type_archive() ) {
-		// 	// カスタム投稿タイプの一覧
-		// 	$queried_object = get_queried_object();
-		// 	$shoulder = isset( $queried_object->name  ) ? $queried_object->name  : '';
-		} elseif ( is_404() ) {
-			$shoulder = 'Page Not Found';
+		if ( is_404() ) {
+			return 'Page Not Found';
 		}
 
+		global $wp;
+		$url_segments = explode( '/', $wp->request );
+		$shoulder = !empty( $url_segments ) ? end( $url_segments ) : '';
+
+		if ( is_single() && 'post' === get_post_type() ) {
+			// 通常投稿の場合はその投稿のカテゴリーのスラッグを取得する
+			$categories = get_the_category();
+			$shoulder = isset( $categories ) ? $categories[0]->slug : '';
+		}
+		
 		// ハイフンをスペースに置換し、各単語の先頭を大文字にする（例: about-us -> About Us）
 		$shoulder = str_replace( '-', ' ', $shoulder );
 		return ucwords( $shoulder );
