@@ -6,12 +6,13 @@
     <section id="main-section">
         <div class="container">
             <div class="inner_container">
-                <?php the_content(); ?>
+                <p>お探しのページは見つかりませんでした。</p>
+                <p>すでに削除されたか、URLが変更された可能性があります。</p>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">トップページへ戻る</a>
             </div>
         </div>
     </section>
 
-    <?php get_template_part('template-parts/breadcrumb'); ?>
 </main>
 
 <?php get_footer(); ?>

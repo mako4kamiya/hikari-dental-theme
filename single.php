@@ -4,23 +4,31 @@
     <?php get_template_part('template-parts/header-entry'); ?>
 
     <section id="main-section">
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <?php the_post_thumbnail(); ?>
-            <div class="container">
-                <div class="inner_container">
-                    <?php if ( get_post_type() === 'information' ) : ?>
-                    <div class="entry-excerpt">
-                        <?php the_excerpt(); ?>
-                    </div>
-                    <?php endif; ?>
-                    <div class="entry-content">
-                        <?php the_content(); ?>
+        <?php if ( have_posts() ) : ?>
+            <?php while ( have_posts() ) : the_post(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                <?php the_post_thumbnail(); ?>
+                <div class="container">
+                    <div class="inner_container">
+                        <?php if ( get_post_type() === 'information' ) : ?>
+                        <div class="entry-excerpt">
+                            <?php the_excerpt(); ?>
+                        </div>
+                        <?php endif; ?>
+                        <div class="entry-content">
+                            <?php the_content(); ?>
+                        </div>
                     </div>
                 </div>
+            </article>
+            <?php endwhile; ?>
+        <?php else : ?>
+            <div class="container">
+                <div class="inner_container">
+                    <p>お探しの記事は見つかりませんでした。すでに削除されたか、URLが変更された可能性があります。</p>
+                </div>
             </div>
-        </article>
-        <?php endwhile; endif; ?>
+        <?php endif; ?>
     </section>
     
     <?php get_template_part('template-parts/breadcrumb'); ?>

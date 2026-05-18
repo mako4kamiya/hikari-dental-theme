@@ -3,10 +3,10 @@
 <main class="light-mode">
     <?php get_template_part('template-parts/header-entry'); ?>
     
-    <?php if (have_posts()) : ?>
-        <section id="main-section">
-            <div class="container">
-                <div class="inner_container">
+    <section id="main-section">
+        <div class="container">
+            <div class="inner_container">
+                <?php if (have_posts()) : ?>
                     <ul>
                     <?php while (have_posts()) : the_post(); ?>
                         <li id="<?php the_ID(); ?>">
@@ -21,10 +21,12 @@
                         </li>
                     <?php endwhile; ?>
                     </ul>
-                </div>
+                <?php else : ?>
+                    <p>お探しの記事は見つかりませんでした。すでに削除されたか、URLが変更された可能性があります。</p>
+                <?php endif; ?>
             </div>
-        </section>
-    <?php endif; ?>
+        </div>
+    </section>
 
     <?php get_template_part('template-parts/breadcrumb'); ?>
 </main>
