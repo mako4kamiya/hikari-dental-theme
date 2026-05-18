@@ -1,13 +1,10 @@
-<?php
-    get_header();
-    $post_type_obj = get_queried_object();
-    $post_type_name = $post_type_obj->name;
-?>
-<main id="archive-<?php echo esc_attr($post_type_name); ?>" class="light-mode">
+<?php get_header(); ?>
+
+<main class="light-mode">
     <?php get_template_part('template-parts/header-entry'); ?>
     
     <?php if (have_posts()) : ?>
-        <section>
+        <section id="main-section">
             <div class="container">
                 <div class="inner_container">
                     <ul>
@@ -31,4 +28,5 @@
 
     <?php get_template_part('template-parts/breadcrumb'); ?>
 </main>
+
 <?php get_footer(); ?>

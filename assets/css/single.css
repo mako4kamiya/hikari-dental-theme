@@ -1,5 +1,6 @@
+/* 通常投稿共通 */
 body.single {
-    article {
+    section#main-section {
         img {
             width: 100%;
             object-fit: contain;

@@ -13,58 +13,56 @@ body.page {
             }
         }
     }
-    main#page-about {
-        section#greeting {
-            .greeting-message {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
+    section#greeting {
+        .greeting-message {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            > div {
+                display: flex;
+                flex-direction: column;
                 gap: 2rem;
+                text-align: center;
+            }
+            img {
+                width: 100%;
+            }
+        }
+        .director-history {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            .row {
+                display: flex;
+                gap: 1rem;
+            }
+        }
+    }
+    section#staff {
+        .staff-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            .staff-item {
+                display: flex;
+                flex-direction: column;
                 align-items: center;
-                > div {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 2rem;
-                    text-align: center;
-                }
+                gap: 1rem;
                 img {
                     width: 100%;
                 }
             }
-            .director-history {
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-                align-items: center;
-                .row {
-                    display: flex;
-                    gap: 1rem;
-                }
-            }
         }
-        section#staff {
-            .staff-list {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-                .staff-item {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 1rem;
-                    img {
-                        width: 100%;
-                    }
-                }
-            }
-        }
-        section#facilities {
-            .facility-list {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 2rem;
-                div.headings {
-                    text-align: start;
-                }
+    }
+    section#facilities {
+        .facility-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            div.headings {
+                text-align: start;
             }
         }
     }

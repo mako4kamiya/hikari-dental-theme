@@ -1,6 +1,6 @@
-/* 固定ページ共通 */
+/* カテゴリーページ共通 */
 body.category {
-    section#news {
+    section#main-section {
         .inner_container {
             display: flex;
             justify-content: center;

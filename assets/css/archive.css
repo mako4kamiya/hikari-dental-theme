@@ -1,5 +1,6 @@
-body.archive  {
-    main#archive-information {
+/* アーカイブページ共通 */
+body.archive:not(.category)  {
+    section#main-section {
         ul {
             display: grid;
             grid-template-columns: repeat(3, 1fr);

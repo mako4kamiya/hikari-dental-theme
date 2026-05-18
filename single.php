@@ -2,7 +2,8 @@
 
 <main class="light-mode">
     <?php get_template_part('template-parts/header-entry'); ?>
-    <section>
+
+    <section id="main-section">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <?php the_post_thumbnail(); ?>
@@ -21,6 +22,7 @@
         </article>
         <?php endwhile; endif; ?>
     </section>
+    
     <?php get_template_part('template-parts/breadcrumb'); ?>
 </main>
 

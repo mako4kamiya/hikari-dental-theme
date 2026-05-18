@@ -1,12 +1,9 @@
-<?php
-    get_header();
-    $post_type_obj = get_queried_object();
-    $post_type_name = $post_type_obj->slug;
-?>
-<main id="category-<?php echo esc_attr($post_type_name); ?>" class="light-mode">
+<?php get_header(); ?>
+
+<main class="light-mode">
     <?php get_template_part('template-parts/header-entry'); ?>
 
-    <section id="<?php echo esc_attr($post_type_name); ?>">
+    <section id="main-section">
         <div class="container">
             <div class="inner_container">
                 <?php if (have_posts()) : ?>
@@ -28,4 +25,5 @@
 
     <?php get_template_part('template-parts/breadcrumb'); ?>
 </main>
+
 <?php get_footer(); ?>
