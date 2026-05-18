@@ -1,6 +1,6 @@
 <?php
-$shoulder = get_my_entry_shoulder();
-$title    = get_my_entry_title();
+    $shoulder = get_my_entry_shoulder();
+    $title    = get_my_entry_title();
 ?>
 <header id="entry-header">
     <div class="container">
