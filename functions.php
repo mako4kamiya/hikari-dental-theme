@@ -320,15 +320,19 @@
 			// 固定ページのスラッグ
 			global $post;
 			$shoulder = isset( $post->post_name ) ? $post->post_name : '';
-		} elseif ( is_category() ) {
+		} elseif ( is_archive() ) {
 			// カテゴリー一覧のスラッグ
 			$queried_object = get_queried_object();
 			$shoulder = isset( $queried_object->slug ) ? $queried_object->slug : '';
-		} elseif ( is_post_type_archive() ) {
-			// カスタム投稿タイプの一覧
-			$queried_object = get_queried_object();
-			$shoulder = isset( $queried_object->name  ) ? $queried_object->name  : '';
-		}elseif ( is_404() ) {
+		// } elseif ( is_category() ) {
+		// 	// カテゴリー一覧のスラッグ
+		// 	$queried_object = get_queried_object();
+		// 	$shoulder = isset( $queried_object->slug ) ? $queried_object->slug : '';
+		// } elseif ( is_post_type_archive() ) {
+		// 	// カスタム投稿タイプの一覧
+		// 	$queried_object = get_queried_object();
+		// 	$shoulder = isset( $queried_object->name  ) ? $queried_object->name  : '';
+		} elseif ( is_404() ) {
 			$shoulder = 'Page Not Found';
 		}
 
@@ -345,10 +349,12 @@
 	function get_my_entry_title() {
 		if ( is_404() ) {
 			return 'ページが見つかりません';
+		} elseif ( is_category() ) {
+			return single_cat_title( '', false );
 		} elseif ( is_post_type_archive() ) {
-			// カスタム投稿タイプの一覧
-			$queried_object = get_queried_object();
-			return isset( $queried_object->label ) ? $queried_object->label : '';
+			return post_type_archive_title( '', false );
+		} elseif ( is_archive() ) {
+        	return get_the_archive_title(); 
 		}
 		return get_the_title();
 	}
