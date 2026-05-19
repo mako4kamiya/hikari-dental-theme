@@ -66,4 +66,18 @@ body.page {
             }
         }
     }
+    section#contact {
+        flex-direction: column;
+        img {
+            width: 100%;
+        }
+        .inner_container {
+            align-items: center;
+            .content {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    }
 }
