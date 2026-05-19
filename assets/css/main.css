@@ -159,8 +159,27 @@ body {
 input, button, textarea, select {
     color: inherit;
 }
+h2 {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 700; /* Bold */
+    font-size: 28px;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+}
+p {
+    font-family: "Noto Serif JP", serif;
+    font-weight: 400; /* Regular */
+    font-size: 17px;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+}
 li {
     list-style: none;
+    font-family: "Noto Serif JP", serif;
+    font-weight: 400; /* Regular */
+    font-size: 17px;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
 }
 a {
     text-decoration: underline;

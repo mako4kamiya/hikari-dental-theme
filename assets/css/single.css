@@ -12,31 +12,15 @@ body.single {
             gap: 4rem;
         }
         .entry-excerpt p {
-            font-family: "Noto Serif JP", serif;
             font-weight: 700; /* Bold */
-            font-size: 17px;
-            line-height: 1.7;
-            letter-spacing: 0.02em;
         }
         .entry-content {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            p {
-                font-family: "Noto Serif JP", serif;
-                font-weight: 400; /* Regular */
-                font-size: 17px;
-                line-height: 1.7;
-                letter-spacing: 0.02em;
-            }
         }
         li {
             list-style: disc;
-            font-family: "Noto Serif JP", serif;
-            font-weight: 400; /* Regular */
-            font-size: 17px;
-            line-height: 1.7;
-            letter-spacing: 0.02em;
         }
     }
 }
