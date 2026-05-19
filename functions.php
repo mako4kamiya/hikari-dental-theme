@@ -298,6 +298,17 @@
 
 
 	/**
+	 * アクセスのショートコード
+	 */
+	function access_html() {
+		ob_start();
+		get_template_part('template-parts/access'); 
+		return ob_get_clean();
+	}
+	add_shortcode('access', 'access_html');
+
+
+	/**
 	 * ページに応じたショルダーテキスト（小見出し）を取得する
 	 */
 	function get_my_entry_shoulder() {

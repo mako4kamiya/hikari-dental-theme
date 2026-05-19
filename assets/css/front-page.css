@@ -154,24 +154,6 @@ div#information {
         }
     }
 }
-div#access {
-    min-height: 100svh;
-    padding-top: 4rem;
-    display: flex;
-    flex-direction: column;
-    .clinic_info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4rem;
-    }
-    .access_map {
-        iframe {
-            width: 100%;
-            height: 500px;
-        }
-    }
-}
 div#clinic-hours {
     min-height: 100svh;
     padding-top: 4rem;

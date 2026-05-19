@@ -103,35 +103,17 @@
             </div>
         </div>
     </div>
-    <div id="access" class="light-mode">
+    <section id="access" class="light-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="headings">
                     <p class="text-style-shoulder">Access</p>
                     <h2 class="text-style-h1">アクセス</h2>
                 </div>
-                <div class="clinic_info">
-                    <div class="headings clinic_name">
-                        <h2 class="text-style-h2">
-                            <?php bloginfo('name'); ?>
-                        </h2>
-                    </div>
-                    <div class="clinic_address">
-                        <p class="text-style-p-regular">
-                            〒<?php echo esc_html(get_option('clinic_postal_code')); ?>
-                            <?php echo esc_html(get_option('clinic_address')); ?>
-                        </p>
-                        <p class="text-style-p-regular">
-                            最寄り駅: <?php echo esc_html(get_option('clinic_nearest_station')); ?>
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
-        <div class="access_map">
-            <?php echo get_option('clinic_map'); ?>
-        </div>
-    </div>
+        <?php get_template_part('template-parts/access'); ?>
+    </section>
     <div id="clinic-hours" class="light-mode">
         <div class="container">
             <div class="inner_container">
