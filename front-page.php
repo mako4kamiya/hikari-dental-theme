@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main>
-    <div id="main-visual" class="dark-mode">
+    <section id="main-visual" class="dark-mode">
         <div class="container">
             <div class="main_visual_container">
                 <div class="main_visual-left">
@@ -12,8 +12,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="about" class="light-mode">
+    </section>
+    <section id="about" class="light-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="about-left">
@@ -26,8 +26,8 @@
                 <img class="about-right" src="<?php echo get_theme_file_uri(); ?>/assets/images/front/medical-team.jpg" alt="クリニック紹介の写真">
             </div>
         </div>
-    </div>
-    <div id="features" class="dark-mode">
+    </section>
+    <section id="features" class="dark-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="headings">
@@ -62,8 +62,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="information" class="light-mode">
+    </section>
+    <section id="information" class="light-mode">
         <?php
             $post_type_obj = get_post_type_object('information');
             $post_type_label = $post_type_obj->label;
@@ -102,7 +102,7 @@
                 </section>
             </div>
         </div>
-    </div>
+    </section>
     <section id="access" class="light-mode">
         <div class="container">
             <div class="inner_container">
@@ -114,7 +114,7 @@
         </div>
         <?php get_template_part('template-parts/access'); ?>
     </section>
-    <div id="clinic-hours" class="light-mode">
+    <section id="clinic-hours" class="light-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="headings">
@@ -124,8 +124,8 @@
                 <?php echo do_shortcode( '[clinic_table]' ); ?>
             </div>
         </div>
-    </div>
-    <div id="news" class="dark-mode">
+    </section>
+    <section id="news" class="dark-mode">
         <div class="container">
             <div class="inner_container">
                 <div class="headings">
@@ -151,6 +151,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </main>
 <?php get_footer(); ?>

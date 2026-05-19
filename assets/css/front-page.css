@@ -1,4 +1,4 @@
-div#main-visual {
+section#main-visual {
     min-height: 100svh;
     display: flex;
     &::before {
@@ -41,7 +41,7 @@ div#main-visual {
         }
     }
 }
-div#about {
+section#about {
     min-height: 100svh;
     padding-top: 4rem;
     display: flex;
@@ -64,7 +64,7 @@ div#about {
         }
     }
 }
-div#features {
+section#features {
     min-height: 100svh;
     padding-top: 4rem;
     display: flex;
@@ -116,7 +116,7 @@ div#features {
         }
     }
 }
-div#information {
+section#information {
     min-height: 100svh;
     padding-top: 4rem;
     display: flex;
@@ -154,7 +154,13 @@ div#information {
         }
     }
 }
-div#clinic-hours {
+section#access {
+    min-height: 100svh;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+section#clinic-hours {
     min-height: 100svh;
     padding-top: 4rem;
     display: flex;
@@ -170,7 +176,7 @@ div#clinic-hours {
         }
     }
 }
-div#news {
+section#news {
     min-height: 100svh;
     padding-top: 4rem;
     display: flex;
