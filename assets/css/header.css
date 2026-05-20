@@ -39,3 +39,32 @@ header#site-header {
         visibility: visible;
     }
 }
+/* 画面横幅が 768px 以下になったら適用（タブレット・スマホ用） */
+@media screen and (max-width: 768px) {
+    /* ここにスマホ用のスタイルを書く */
+    header#site-header {
+        div {
+            padding: 0 1rem;
+            nav#header-nav {
+                background-color: var(--dark-mode-background);
+                position: absolute;
+                top: 0;
+                right: 0;
+                /* transform: translateX(-100%); */
+                padding: 4rem 0;
+                ul#header-menu {
+                    flex-direction: column;
+                    li {
+                        border-bottom: 1px solid var(--neutral-gray);
+                        padding: unset;
+                        margin: 0 2rem;
+                        a {
+                            display: block;
+                            padding: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
