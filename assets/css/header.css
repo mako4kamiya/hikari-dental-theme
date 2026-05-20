@@ -50,7 +50,7 @@ header#site-header {
                 position: absolute;
                 top: 0;
                 right: 0;
-                /* transform: translateX(-100%); */
+                transform: translateX(100%);
                 padding: 4rem 0;
                 ul#header-menu {
                     flex-direction: column;

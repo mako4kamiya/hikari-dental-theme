@@ -208,6 +208,7 @@ section#news {
         }
         .main_visual_container {
             display: flex;
+            padding: 7rem 0;
         }
     }
     section#about {
