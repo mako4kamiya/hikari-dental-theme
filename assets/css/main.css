@@ -396,17 +396,37 @@ div.contact-form-7 {
     }
 }
 
-/* 画面横幅が 768px 以下になったら適用（タブレット・スマホ用） */
 @media screen and (max-width: 768px) {
-    /* ここにスマホ用のスタイルを書く */
-    .container {
-        /* padding: 0 1rem; */
-    }
     .card {
         aspect-ratio: 16 / 9;
     }
 }
+
 @media screen and (max-width: 480px) {
+    .text-style-main-copy {
+        font-family: "Noto Serif JP", serif;
+        font-weight: 700; /* Bold */
+        font-size: 28px;
+        line-height: 1.5;
+        letter-spacing: 0.01em;
+    }
+    .text-style-h1 {
+        font-family: "Noto Serif JP", serif;
+        font-weight: 700; /* Bold */
+        font-size: 28px;
+        line-height: 1.5;
+        letter-spacing: 0.01em;
+    }
+    .text-style-h2 {
+        font-family: "Noto Serif JP", serif;
+        font-weight: 700; /* Bold */
+        font-size: 24px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+    }
+    .card {
+        aspect-ratio: 1;
+    }
     .container {
         padding: 0 1rem;
     }

@@ -209,6 +209,11 @@ section#news {
         .main_visual_container {
             display: flex;
             padding: 7rem 0;
+            div.main_visual-left {
+                h1 br {
+                    display: none;
+                }
+            }
         }
     }
     section#about {
@@ -264,5 +269,34 @@ section#news {
     section#news {
         min-height: auto;
         padding: unset;
+    }
+}
+@media screen and (max-width: 480px) {
+    section#main-visual {
+        .main_visual_container {
+            div.main_visual-left {
+                align-items: center;
+                a.logo-mainvisual {
+                    left: 0;
+                }
+                p {
+                    text-align: justify;
+                }
+            }
+        }
+    }
+    section#clinic-hours {
+        div.clinic-table-wrapper {
+            overflow-y: scroll;
+        }
+    }
+    section#about {
+        .container {
+            .inner_container {
+                div.about-left {
+                    align-items: center;
+                }
+            }
+        }
     }
 }
