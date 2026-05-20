@@ -395,3 +395,16 @@ div.contact-form-7 {
         letter-spacing: 0.02em;
     }
 }
+
+/* 画面横幅が 768px 以下になったら適用（タブレット・スマホ用） */
+@media screen and (max-width: 768px) {
+    /* ここにスマホ用のスタイルを書く */
+    .container {
+        /* padding: 0 1rem; */
+    }
+}
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
