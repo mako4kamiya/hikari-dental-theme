@@ -212,6 +212,7 @@ section#news {
     }
     section#about {
         height: 100vh;
+        padding: unset;
         .container {
             .inner_container {
                 display: flex;
@@ -227,6 +228,7 @@ section#news {
         }
     }
     section#features {
+        padding: unset;
         &::before {
             background-position: center;
         }
@@ -237,9 +239,29 @@ section#news {
         }
     }
     section#information {
-        min-width: auto;
+        padding: unset;
+        .inner_container {
+            section.splide {
+                .splide__list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                }
+                .splide__arrows {
+                    display: none;
+                }
+            }
+        }
     }
-    section#access {}
-    section#clinic-hours {}
-    section#news {}
+    section#access {
+        padding: unset;
+    }
+    section#clinic-hours {
+        min-height: auto;
+        padding: unset;
+    }
+    section#news {
+        min-height: auto;
+        padding: unset;
+    }
 }

@@ -6,7 +6,7 @@ const splide = new Splide( '.splide', {
   pagination: false,
   breakpoints: {
     768: {
-      perPage: 1,
+      destroy: true
     },
   }
 } );
