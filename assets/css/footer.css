@@ -41,3 +41,22 @@ footer {
         }
     }
 }
+@media screen and (max-width: 480px) {
+    footer {
+        padding-top: 4rem;
+        .container {
+            gap: 2rem;
+            .inner_container {
+                gap: 2rem;
+                .grid-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                }
+            }
+            .logo-footer {
+                display: none;
+            }
+        }
+    }
+}
