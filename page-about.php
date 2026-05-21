@@ -31,19 +31,19 @@
                     <img src="<?php echo get_theme_file_uri(); ?>/assets/images/about/hikaru-hoshino.jpg   " alt="院長星野ひかるの顔写真">
                 </div>
                 <div class="director-history">
-                    <h3 class="text-style-p-bold">院長　星野 ひかる</h3>
+                    <h3 class="text-style-p-bold">院長 星野 ひかる</h3>
                     <dl class="text-style-p-regular">
                         <div class="row">
-                            <dt>2010年</dt><dd>○○大学歯学部　卒業</dd>
+                            <dt>2010年</dt><dd>○○大学歯学部<span>卒業</span></dd>
                         </div>
                         <div class="row">
-                            <dt>2011年</dt><dd>○○大学歯学部附属病院　臨床研修 修了</dd>
+                            <dt>2011年</dt><dd>○○大学歯学部附属病院 臨床研修<span>修了</span></dd>
                         </div>
                         <div class="row">
-                            <dt>2012年</dt><dd>医療法人〇〇会 ○○歯科クリニック　勤務</dd>
+                            <dt>2012年</dt><dd>医療法人〇〇会 ○○歯科クリニック<span>勤務</span></dd>
                         </div>
                         <div class="row">
-                            <dt>2026年</dt><dd>ひかりデンタルクリニック　開院</dd>
+                            <dt>2026年</dt><dd>ひかりデンタルクリニック<span>開院</span></dd>
                         </div>
                     </dl>
                 </div>

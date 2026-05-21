@@ -35,8 +35,12 @@ body.page {
             gap: 2rem;
             align-items: center;
             .row {
-                display: flex;
+                display: grid;
+                grid-template-columns: auto 1fr auto;
                 gap: 1rem;
+                dd {
+                    display: contents; 
+                }
             }
         }
     }
@@ -59,10 +63,13 @@ body.page {
     section#facilities {
         .facility-list {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fill, minmax(calc(343px - 1rem), 1fr));
             gap: 2rem;
             div.headings {
                 text-align: start;
+            }
+            img {
+                width: 100%;
             }
         }
     }
@@ -89,6 +96,47 @@ body.page {
         li {
             list-style: disc;
             list-style-position: inside;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body.page {
+        section {
+            padding: unset;
+        }
+        section#greeting {
+            .greeting-message {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+        section#staff {
+            .staff-list {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    body.page {
+        section#greeting {
+            .director-history {
+                .row {
+                    grid-template-columns: auto 1fr;
+                    gap: 0.5rem;
+                    dd {
+                        display: block; 
+                        span {
+                            &::before {
+                                content: "…";
+                                margin: 0.5rem;
+                            }
+                        };
+                    }
+                }
+            }
         }
     }
 }
