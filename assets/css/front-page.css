@@ -91,7 +91,6 @@ section#features {
     .inner_container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         gap: 2rem;
         .headings {
             h2, p {
@@ -103,7 +102,9 @@ section#features {
             flex: 1;
             display: grid;
             gap: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));;
+            grid-template-columns: repeat(auto-fit, minmax(calc(343px - 1rem), 1fr));
+            grid-template-rows: 416px;
+            align-content: center;
             .card {
                 &:hover {
                     background-color: var(--dark-mode-card-default);
@@ -237,11 +238,6 @@ section#news {
         padding: unset;
         &::before {
             background-position: center;
-        }
-        .inner_container {
-            .cards {
-                grid-template-columns: 1fr;
-            }
         }
     }
     section#information {
