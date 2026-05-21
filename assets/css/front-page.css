@@ -103,7 +103,7 @@ section#features {
             display: grid;
             gap: 2rem;
             grid-template-columns: repeat(auto-fit, minmax(calc(343px - 1rem), 1fr));
-            grid-template-rows: 416px;
+            grid-auto-rows: minmax(416px, auto);
             align-content: center;
             .card {
                 &:hover {
