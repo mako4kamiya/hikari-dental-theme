@@ -35,11 +35,15 @@ body.page {
             gap: 2rem;
             align-items: center;
             .row {
-                display: grid;
-                grid-template-columns: auto 1fr auto;
                 gap: 1rem;
+                display: flex;
                 dd {
-                    display: contents; 
+                    flex: 1;
+                    display: flex;
+                    justify-content: space-between;
+                    br {
+                        display: none;
+                    }
                 }
             }
         }
@@ -124,16 +128,11 @@ body.page {
         section#greeting {
             .director-history {
                 .row {
-                    grid-template-columns: auto 1fr;
-                    gap: 0.5rem;
                     dd {
-                        display: block; 
-                        span {
-                            &::before {
-                                content: "…";
-                                margin: 0.5rem;
-                            }
-                        };
+                        display: block;
+                        br {
+                            display: block;
+                        }
                     }
                 }
             }
