@@ -264,10 +264,6 @@ address {
 }
 
 /* コンポーネント */
-img.icon {
-    width: 90px;
-    height: 90px;
-}
 a.button {
     min-width: 130px;
     min-height: 56px;

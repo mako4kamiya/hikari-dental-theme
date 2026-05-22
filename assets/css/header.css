@@ -5,7 +5,11 @@ header#site-header {
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s;
-    div {
+    &.is-show {
+        opacity: 1;
+        visibility: visible;
+    }
+    div.header-inner {
         background-color: var(--dark-mode-background);
         height: 4rem;
         padding: 0 4rem;
@@ -34,16 +38,15 @@ header#site-header {
             }
         }
     }
-    &.is-show {
-        opacity: 1;
-        visibility: visible;
+    .header-icon {
+        display: none;
     }
 }
 /* 画面横幅が 768px 以下になったら適用（タブレット・スマホ用） */
 @media screen and (max-width: 768px) {
     /* ここにスマホ用のスタイルを書く */
     header#site-header {
-        div {
+        div.header-inner {
             padding: 0 1rem;
             nav#header-nav {
                 background-color: var(--dark-mode-background);
@@ -63,6 +66,31 @@ header#site-header {
                             padding: 1rem;
                         }
                     }
+                }
+            }
+        }
+        .header-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            aspect-ratio: 1;
+            padding: 0.5rem;
+            margin-right: 1rem;
+            .lines {
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+            &.is-active {
+                .line1 {
+                }
+                .line2 {
+                    opacity: 0;
+                }
+                .line3 {
                 }
             }
         }
