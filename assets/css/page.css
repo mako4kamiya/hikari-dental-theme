@@ -81,6 +81,7 @@ body.page {
         flex-direction: column;
         img {
             width: 100%;
+            object-fit: contain;
         }
         .inner_container {
             align-items: center;
@@ -134,6 +135,13 @@ body.page {
                             display: block;
                         }
                     }
+                }
+            }
+        }
+        section#contact {
+            .contact-form-7 {
+                input, textarea {
+                    width: 100%;
                 }
             }
         }

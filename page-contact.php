@@ -4,7 +4,7 @@
     <?php get_template_part('template-parts/header-entry'); ?>
     
     <section id="contact" class="light-mode">
-        <?php the_post_thumbnail(); ?>
+        <?php the_post_thumbnail('post-thumbnail', array('class' => 'post-thumbnail')); ?>
         <div class="container">
             <div class="inner_container">
                 <div class="contact-form-7">

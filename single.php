@@ -7,7 +7,7 @@
         <?php if ( have_posts() ) : ?>
             <?php while ( have_posts() ) : the_post(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <?php the_post_thumbnail(); ?>
+                <?php the_post_thumbnail('post-thumbnail', array('class' => 'post-thumbnail')); ?>
                 <div class="container">
                     <div class="inner_container">
                         <?php if ( get_post_type() === 'information' ) : ?>
