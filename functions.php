@@ -25,7 +25,8 @@
 		// ｊｓの読み込み
 		wp_enqueue_script('splide-script', get_theme_file_uri('/assets/js/splide.js'), array('splide-script-cdn'), filemtime(get_theme_file_path('/assets/js/splide.js')), array('strategy' => 'defer', 'in_footer' => true));
 		wp_enqueue_script('splide-script-cdn', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array(), '4.1.4', true);
-		wp_enqueue_script('header-script', get_theme_file_uri('/assets/js/header.js'), array(), null, array('strategy' => 'defer', 'in_footer' => true));
+		wp_enqueue_script('header-script', get_theme_file_uri('/assets/js/header.js'), array(), filemtime(get_theme_file_path('/assets/js/header.js')), array('strategy' => 'defer', 'in_footer' => true));
+		wp_enqueue_script('sp-menu-script', get_theme_file_uri('/assets/js/sp-menu.js'), array(), filemtime(get_theme_file_path('/assets/js/sp-menu.js')), array('strategy' => 'defer', 'in_footer' => true));
 
 		// ｃｓｓの読み込み
 		wp_enqueue_style('splide-style-cdn', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array(), '4.1.4');

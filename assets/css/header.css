@@ -38,7 +38,7 @@ header#site-header {
             }
         }
     }
-    .header-icon {
+    .sp-menu {
         display: none;
     }
 }
@@ -49,11 +49,11 @@ header#site-header {
         div.header-inner {
             padding: 0 1rem;
             nav#header-nav {
+                display: none;
                 background-color: var(--dark-mode-background);
                 position: absolute;
                 top: 0;
                 right: 0;
-                transform: translateX(100%);
                 padding: 4rem 0;
                 ul#header-menu {
                     flex-direction: column;
@@ -69,11 +69,10 @@ header#site-header {
                 }
             }
         }
-        .header-icon {
+        .sp-menu {
             display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
+            justify-content: center;
+            align-items: stretch;
             position: absolute;
             top: 0;
             right: 0;
@@ -81,16 +80,29 @@ header#site-header {
             aspect-ratio: 1;
             padding: 0.5rem;
             margin-right: 1rem;
-            .lines {
-                transition: transform 0.3s ease, opacity 0.3s ease;
-            }
-            &.is-active {
-                .line1 {
+            .header-icon {
+                padding: 5px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                .lines path {
+                    transition: transform 0.3s ease, opacity 0.3s ease;
+                    transform-origin: center;
                 }
-                .line2 {
-                    opacity: 0;
-                }
-                .line3 {
+                &.is-active {
+                    .lines {
+                        width: 30px;
+                        .line1 {
+                            transform: rotate(135deg) translateY(10px);
+                        }
+                        .line2 {
+                            opacity: 0;
+                        }
+                        .line3 {
+                            transform: rotate(-135deg) translateY(-10px);
+                        }
+                    }
                 }
             }
         }
