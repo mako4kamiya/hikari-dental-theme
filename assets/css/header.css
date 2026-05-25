@@ -56,6 +56,9 @@ header#site-header {
                 top: 0;
                 right: 0;
                 padding: 4rem 0;
+                width: 50%;
+                max-height: 100svh;
+                overflow-y: scroll;
                 &.is-active {
                     transform: translateX(0);
                 }
@@ -126,6 +129,23 @@ header#site-header {
                     }
                     .close {
                         display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    header#site-header {
+        div.header-inner {
+            padding: 0 1rem;
+            nav#header-nav {
+                width: 80%;
+                ul#header-menu {
+                    li {
+                        a {
+                            padding: 0.5rem;
+                        }
                     }
                 }
             }
