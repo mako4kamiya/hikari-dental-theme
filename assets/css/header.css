@@ -49,12 +49,16 @@ header#site-header {
         div.header-inner {
             padding: 0 1rem;
             nav#header-nav {
-                display: none;
+                transition: transform 0.3s ease;
+                transform: translateX(100%);
                 background-color: var(--dark-mode-background);
                 position: absolute;
                 top: 0;
                 right: 0;
                 padding: 4rem 0;
+                &.is-active {
+                    transform: translateX(0);
+                }
                 ul#header-menu {
                     flex-direction: column;
                     li {
