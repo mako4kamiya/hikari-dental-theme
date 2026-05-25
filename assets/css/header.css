@@ -119,10 +119,21 @@ header#site-header {
                             padding: 1rem;
                         }
                         ul.sub-menu {
+                            transform: unset;
+                            position: unset;
+                            padding: unset;
+                            width: auto;
                             li {
                                 margin-right: unset;
                                 &:last-child {
                                     border-bottom: unset;
+                                }
+                            }
+                        }
+                        &:has(.sub-menu) {
+                            & > a {
+                                &::after {
+                                    content: unset;
                                 }
                             }
                         }
