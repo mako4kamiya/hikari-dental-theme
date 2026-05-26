@@ -269,6 +269,133 @@ function create_post_type_information() {
 }
 add_action( 'init', 'create_post_type_information' );
 
+/* --------------------------------------------------------------------------
+* 診療内容のカスタム投稿タイプにアイコン設定機能を追加
+* ----------------------------------------------------------------------- */
+// 1. アイコン定義ファイル（assets/icons.php）を読み込む
+require_once get_theme_file_path('/assets/icons.php');
+
+// 2. カスタム投稿「information」の編集画面にアイコン設定欄を追加
+function add_information_icon_meta_box() {
+    add_meta_box(
+        'information_icon_box',
+        'アイコン画像の設定',
+        'render_information_icon_meta_box',
+        'information',
+        'side',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'add_information_icon_meta_box');
+
+// 3. 管理画面にアイコン画像を並べて選択（ラジオボタン）させるHTMLとCSS
+function render_information_icon_meta_box($post) {
+    wp_nonce_field('save_information_icon_action', 'information_icon_nonce');
+
+    // 現在保存されているアイコンのキー名を取得
+    $selected_icon = get_post_meta($post->ID, '_selected_svg_icon', true);
+    $icons = get_custom_svg_icons();
+    
+    echo '<div class="admin-icon-selector">';
+
+    // 未選択（アイコンなし）の選択肢
+    $no_icon_checked = (empty($selected_icon)) ? 'checked' : '';
+    echo '<label class="admin-icon-label no-icon">';
+    echo '<input type="radio" name="selected_svg_icon" value="" ' . $no_icon_checked . ' />';
+    echo '<span>なし</span>';
+    echo '</label>';
+
+    // 配列内のSVGをループして、画像付きのボタンを生成
+    if ( !empty($icons) ) {
+        foreach ( $icons as $key => $svg_code ) {
+            $checked = ($selected_icon === $key) ? 'checked' : '';
+            echo '<label class="admin-icon-label" title="' . esc_attr($key) . '">';
+            echo '<input type="radio" name="selected_svg_icon" value="' . esc_attr($key) . '" ' . $checked . ' />';
+            echo '<div class="admin-icon-svg-wrapper">' . $svg_code . '</div>';
+            echo '</label>';
+        }
+    }
+    echo '</div>';
+
+    // 管理画面専用の簡易CSS（見た目を整え、選択中のものを強調する）
+    ?>
+    <style>
+        .admin-icon-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            background: #f0f0f1;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .admin-icon-label {
+            position: relative;
+            cursor: pointer;
+            border: 2px solid #ccd0d4;
+            background: #fff;
+            border-radius: 4px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            transition: all 0.15s ease-in-out;
+        }
+        /* ラジオボタン自体は非表示にして見栄えを良くする */
+        .admin-icon-label input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        /* 「なし」ボタンのテキスト用スタイル */
+        .admin-icon-label.no-icon span {
+            font-size: 11px;
+            color: #646970;
+        }
+        /* SVGアイコンのサイズと色 */
+        .admin-icon-svg-wrapper svg {
+            width: 24px;
+            height: 24px;
+            color: #2c3338;
+            display: block;
+        }
+        /* マウスホバー時 */
+        .admin-icon-label:hover {
+            border-color: #2271b1;
+            background: #f0f6fc;
+        }
+        /* 選択されている（チェックが入っている）ボタンの見た目 */
+        .admin-icon-label:has(input:checked) {
+            border-color: #2271b1;
+            background: #f0f6fc;
+            box-shadow: 0 0 0 1px #2271b1;
+        }
+    </style>
+    <?php
+}
+
+// 4. アイコンの選択データを保存
+function save_information_icon_meta_box($post_id) {
+    if (!isset($_POST['information_icon_nonce']) || !wp_verify_nonce($_POST['information_icon_nonce'], 'save_information_icon_action')) {
+        return;
+    }
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+
+    if (isset($_POST['selected_svg_icon']) && $_POST['selected_svg_icon'] !== '') {
+        update_post_meta($post_id, '_selected_svg_icon', sanitize_text_field($_POST['selected_svg_icon']));
+    } else {
+        delete_post_meta($post_id, '_selected_svg_icon');
+    }
+}
+add_action('save_post', 'save_information_icon_meta_box');
+
 
 
 

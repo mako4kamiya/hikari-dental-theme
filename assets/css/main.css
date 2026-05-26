@@ -302,6 +302,11 @@ a.button {
     justify-content: center;
     padding: 2rem;
     gap: 2rem;
+    .card-icon svg {
+        width: 90px;
+        aspect-ratio: 1;
+        color: var(--light-mode-font1);
+    }
 }
 .dark-mode .card {
     background-color: var(--dark-mode-card-default);
