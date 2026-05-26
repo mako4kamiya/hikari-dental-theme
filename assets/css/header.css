@@ -35,11 +35,13 @@ header#site-header {
                     ul.sub-menu {
                         background-color: var(--dark-mode-background);
                         position: absolute;
-                        top: 0;
+                        top: 100%;
                         left: 0;
                         width: max-content;
                         padding: 1rem;
-                        transform: translateY(-101%);
+                        transform: translateY(calc(-100% - 4rem));
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
                         li {
                             border-top: 1px solid var(--neutral-gray);
                             padding: unset;
@@ -65,16 +67,17 @@ header#site-header {
                                 background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.1L3 8L4 7L12 15L20 7L21 8L12 17.1Z" fill="%23F4F1EC"/></svg>');
                                 transition: background-image 0.3s ease;
                             }
-                            &:hover {
-                                &::after {
-                                    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 16.5004L3 15.5004L12 6.40039L21 15.5004L20 16.5004L12 8.60039L4 16.5004Z" fill="%23F4F1EC"/></svg>');
-                                }
-                                + ul.sub-menu {
-                                    /* transition: transform 0.3s ease; */
-                                    transform: translateY(0);
-                                    top: 100%;
-                                }
+                        }
+                    }
+                    &:hover {
+                        > a {
+                            &::after {
+                                background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 16.5004L3 15.5004L12 6.40039L21 15.5004L20 16.5004L12 8.60039L4 16.5004Z" fill="%23F4F1EC"/></svg>');
                             }
+                        }
+                        ul.sub-menu {
+                            opacity: 1;
+                            transform: translateY(0);
                         }
                     }
                 }
@@ -123,6 +126,7 @@ header#site-header {
                             position: unset;
                             padding: unset;
                             width: auto;
+                            opacity: unset;
                             li {
                                 margin-right: unset;
                                 &:last-child {
