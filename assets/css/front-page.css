@@ -37,6 +37,9 @@ section#main-visual {
                 display: inline-flex;
                 position: absolute;
                 top: -44px;
+                img {
+                    height: 44px;
+                }
             }
         }
     }

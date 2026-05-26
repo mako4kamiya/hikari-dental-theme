@@ -16,6 +16,11 @@ header#site-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        img.custom-logo {
+            width: 150px;
+            height: 4rem;
+            object-fit: contain;
+        }
         nav#header-nav {
             ul#header-menu {
                 padding: 0;
