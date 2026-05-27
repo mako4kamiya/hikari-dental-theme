@@ -5,7 +5,6 @@ footer {
     .container {
         flex-direction: column;
         .inner_container {
-            padding: unset;
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
@@ -46,7 +45,6 @@ footer {
 }
 @media screen and (max-width: 480px) {
     footer {
-        padding-top: 4rem;
         .container {
             gap: 2rem;
             .inner_container {
