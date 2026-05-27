@@ -2,6 +2,7 @@ body.home {
     section#main-visual {
         min-height: 100svh;
         display: flex;
+        position: relative;
         &::before {
             content: "";
             position: absolute;
