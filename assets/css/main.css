@@ -41,6 +41,8 @@
     --light-mode-button-focus-shadow: var(--neutral-light);
     --light-mode-card-default: var(--primitive-gold-d77);
     --light-mode-card-hover: rgb(205 173 125 / 80%);
+    --light-mode-semantic-success: #197A4B;
+    --light-mode-semantic-error: #CE0000;
     --light-mode-semantic-warning: #856800;
 }
 
@@ -332,6 +334,17 @@ a.button {
     background-color: var(--light-mode-card-default);
     &:hover {
         background-color: var(--light-mode-card-hover);
+    }
+}
+.notification-banner {
+    &.success {
+        border: 1px solid var(--light-mode-semantic-success);
+    }
+    &.error {
+        border: 1px solid var(--light-mode-semantic-error);
+    }
+    &.warning {
+        border: 1px solid var(--light-mode-semantic-warning);
     }
 }
 
