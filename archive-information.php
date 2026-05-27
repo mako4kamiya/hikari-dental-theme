@@ -15,9 +15,7 @@
                                     <h3 class="text-style-h2"><?php the_title(); ?></h3>
                                 </div>
                                 <?php
-
                                 $saved_icon_key = get_post_meta(get_the_ID(), '_selected_svg_icon', true);
-
                                 if ( $saved_icon_key ) {
                                     // 2. assets/icons.php からアイコン一覧を呼び出し
                                     $icons = get_custom_svg_icons();
