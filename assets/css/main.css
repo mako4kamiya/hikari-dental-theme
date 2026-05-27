@@ -148,6 +148,9 @@
 * {
     box-sizing: border-box;
 }
+html {
+    background-color: var(--light-mode-background);
+}
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, dd, blockquote, figure {
     margin: 0;
     padding: 0;
