@@ -102,7 +102,7 @@
                         </ul>
                     </div>
                 </div>
-                <p class="text-style-footer-regular">※本サイトはデジタル庁デザインシステムを参考に制作しています。</p>
+                <p class="text-style-footer-regular warning">※このウェブサイトは、ポートフォリオ制作のための架空の歯科医院のサイトです。実在する人物・団体・医療機関とは一切関係ありません。</p>
             </div>
             <a class="logo-footer" href="<?php echo home_url(); ?>"><img src="<?php echo get_theme_file_uri(); ?>/assets/images/footer/hikari-dental-logo-footer.png" alt="ひかりデンタルクリニックのロゴフッター"></a>
             <small id="copylight" class="text-style-footer-regular">&copy; 2026 HIKARI DENTAL CLINIC. All Rights Reserved.</small>

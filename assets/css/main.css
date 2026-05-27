@@ -41,6 +41,7 @@
     --light-mode-button-focus-shadow: var(--neutral-light);
     --light-mode-card-default: var(--primitive-gold-d77);
     --light-mode-card-hover: rgb(205 173 125 / 80%);
+    --light-mode-semantic-warning: #856800;
 }
 
 /* フォントに関するスタイル */
@@ -235,6 +236,9 @@ address {
     }
     p, h1, h2, h3 {
         color: var(--light-mode-font1);
+    }
+    p.warning {
+        color: var(--light-mode-semantic-warning);
     }
     p.text-style-shoulder {
         color: var(--light-mode-font2);
