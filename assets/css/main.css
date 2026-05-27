@@ -160,7 +160,13 @@ body {
     color: var(--light-mode-font1);
 }
 input, button, textarea, select {
-    color: inherit;
+    color: var(--light-mode-font1);
+    border: 1px solid var(--neutral-gray);
+    border-radius: 3px;
+}
+input[type="submit"] {
+    background-color: var(--dark-mode-button-default);
+    color: var(--dark-mode-button-text);
 }
 h2 {
     font-family: "Noto Serif JP", serif;
