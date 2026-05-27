@@ -1,300 +1,306 @@
-section#main-visual {
-    min-height: 100svh;
-    display: flex;
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background-image: url("../images/front/mv-dentist-patient-consultation.jpg");
-        background-size: cover;
-    }
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background-color: rgba(19, 30, 61, 70%);
-    }
-    .main_visual_container {
-        flex: 1;
-        padding: 7rem 7rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        div.main_visual-left {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            row-gap: 2rem;
-            position: relative;
-            a.logo-mainvisual {
-                display: inline-flex;
-                position: absolute;
-                top: -44px;
-                img {
-                    height: 44px;
-                }
-            }
+body.home {
+    section#main-visual {
+        min-height: 100svh;
+        display: flex;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-image: url("../images/front/mv-dentist-patient-consultation.jpg");
+            background-size: cover;
         }
-    }
-}
-section#about {
-    min-height: 100svh;
-    padding-top: 4rem;
-    display: flex;
-    .container {
-        .inner_container {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(19, 30, 61, 70%);
+        }
+        .main_visual_container {
+            flex: 1;
+            padding: 7rem 7rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            div.about-left {
+            div.main_visual-left {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-evenly;
-                align-items: flex-start;
-            }
-            img.about-right {
-                width: 100%;
-                max-height: calc(100svh - 14rem);
-                object-fit: cover;
-            }
-        }
-    }
-}
-section#features {
-    min-height: 100svh;
-    padding-top: 4rem;
-    display: flex;
-    position: relative;
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background-image: url("../images/front/features-staff-discussion.jpg");
-        background-size: cover;
-    }
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background-color: rgba(19, 30, 61, 70%);
-    }
-    .inner_container {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        .headings {
-            h2, p {
-                color: var(--dark-mode-font2);
-                text-align: center;
-            }
-        }
-        .cards {
-            flex: 1;
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(calc(343px - 1rem), 1fr));
-            grid-auto-rows: minmax(416px, auto);
-            align-content: center;
-            .card {
-                &:hover {
-                    background-color: var(--dark-mode-card-default);
-                }
-                h3 {
-                    color: var(--dark-mode-font2);
-                    text-align: center;
-                }
-            }
-        }
-    }
-}
-section#information {
-    min-height: 100svh;
-    padding-top: 4rem;
-    display: flex;
-    .inner_container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-        section.splide {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            .splide__arrows {
-                display: flex;
                 justify-content: center;
-                align-items: center;
-                gap: 1rem;
-                .splide__arrow {
-                    position: relative;
-                    left: unset;
-                    right: unset;
-                    height: 3em;
-                    width: 3em;
-                    background: transparent;
-                    border: 1px solid var(--light-mode-font1);
-                    opacity: 1;
-                    &:hover {
-                        opacity: 0.7;
+                align-items: flex-start;
+                row-gap: 2rem;
+                position: relative;
+                a.logo-mainvisual {
+                    display: inline-flex;
+                    position: absolute;
+                    top: -44px;
+                    img {
+                        height: 44px;
                     }
-                    svg {
-                        fill: var(--light-mode-font1);
-                    }
-                }
-            }
-        }
-    }
-}
-section#access {
-    min-height: 100svh;
-    padding-top: 4rem;
-    display: flex;
-    flex-direction: column;
-}
-section#clinic-hours {
-    min-height: 100svh;
-    padding-top: 4rem;
-    display: flex;
-    flex-direction: column;
-    .inner_container {
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
-        div {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-    }
-}
-section#news {
-    min-height: 100svh;
-    padding-top: 4rem;
-    display: flex;
-    flex-direction: column;
-    .inner_container {
-        display: flex;
-        flex-direction: column;
-        gap: 4rem;
-        .headings {
-            p, h2 {
-                color: var(--dark-mode-font2);
-            }
-        }
-        .links {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-content: center;
-            gap: 1rem;
-        }
-    }
-}
-/* 画面横幅が 768px 以下になったら適用（タブレット・スマホ用） */
-@media screen and (max-width: 768px) {
-    /* ここにスマホ用のスタイルを書く */
-    section#main-visual {
-        &::before {
-            background-position: center;
-        }
-        .main_visual_container {
-            display: flex;
-            padding: 7rem 0;
-            div.main_visual-left {
-                h1 br {
-                    display: none;
                 }
             }
         }
     }
     section#about {
-        height: 100vh;
-        padding: unset;
+        min-height: 100svh;
+        padding-top: 4rem;
+        display: flex;
         .container {
             .inner_container {
-                display: flex;
-                flex-direction: column-reverse;
-                justify-content: center;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
                 div.about-left {
-                    gap: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    align-items: flex-start;
                 }
                 img.about-right {
-                    max-height: 50%;
+                    width: 100%;
+                    max-height: calc(100svh - 14rem);
+                    object-fit: cover;
                 }
             }
         }
     }
     section#features {
-        padding: unset;
+        min-height: 100svh;
+        padding-top: 4rem;
+        display: flex;
+        position: relative;
         &::before {
-            background-position: center;
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-image: url("../images/front/features-staff-discussion.jpg");
+            background-size: cover;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(19, 30, 61, 70%);
+        }
+        .inner_container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            .headings {
+                h2, p {
+                    color: var(--dark-mode-font2);
+                    text-align: center;
+                }
+            }
+            .cards {
+                flex: 1;
+                display: grid;
+                gap: 2rem;
+                grid-template-columns: repeat(auto-fit, minmax(calc(343px - 1rem), 1fr));
+                grid-auto-rows: minmax(416px, auto);
+                align-content: center;
+                .card {
+                    &:hover {
+                        background-color: var(--dark-mode-card-default);
+                    }
+                    h3 {
+                        color: var(--dark-mode-font2);
+                        text-align: center;
+                    }
+                }
+            }
         }
     }
     section#information {
-        padding: unset;
+        min-height: 100svh;
+        padding-top: 4rem;
+        display: flex;
         .inner_container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
             section.splide {
-                .splide__list {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 2rem;
-                }
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
                 .splide__arrows {
-                    display: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+                    .splide__arrow {
+                        position: relative;
+                        left: unset;
+                        right: unset;
+                        height: 3em;
+                        width: 3em;
+                        background: transparent;
+                        border: 1px solid var(--light-mode-font1);
+                        opacity: 1;
+                        &:hover {
+                            opacity: 0.7;
+                        }
+                        svg {
+                            fill: var(--light-mode-font1);
+                        }
+                    }
                 }
             }
         }
     }
     section#access {
-        padding: unset;
+        min-height: 100svh;
+        padding-top: 4rem;
+        display: flex;
+        flex-direction: column;
     }
     section#clinic-hours {
-        min-height: auto;
-        padding: unset;
-    }
-    section#news {
-        min-height: auto;
-        padding: unset;
-    }
-}
-@media screen and (max-width: 480px) {
-    section#main-visual {
-        .main_visual_container {
-            div.main_visual-left {
-                align-items: center;
-                a.logo-mainvisual {
-                    left: 0;
-                }
-                p {
-                    text-align: justify;
-                }
+        min-height: 100svh;
+        padding-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        .inner_container {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     }
-    section#clinic-hours {
-        div.clinic-table-wrapper {
-            overflow-y: hidden;
-            overflow-x: scroll;
+    section#news {
+        min-height: 100svh;
+        padding-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        .inner_container {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            .headings {
+                p, h2 {
+                    color: var(--dark-mode-font2);
+                }
+            }
+            .links {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-content: center;
+                gap: 1rem;
+            }
         }
     }
-    section#about {
-        .container {
+}
+/* 画面横幅が 768px 以下になったら適用（タブレット・スマホ用） */
+@media screen and (max-width: 768px) {
+    body.home {
+        /* ここにスマホ用のスタイルを書く */
+        section#main-visual {
+            &::before {
+                background-position: center;
+            }
+            .main_visual_container {
+                display: flex;
+                padding: 7rem 0;
+                div.main_visual-left {
+                    h1 br {
+                        display: none;
+                    }
+                }
+            }
+        }
+        section#about {
+            height: 100vh;
+            padding: unset;
+            .container {
+                .inner_container {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    justify-content: center;
+                    div.about-left {
+                        gap: 1rem;
+                    }
+                    img.about-right {
+                        max-height: 50%;
+                    }
+                }
+            }
+        }
+        section#features {
+            padding: unset;
+            &::before {
+                background-position: center;
+            }
+        }
+        section#information {
+            padding: unset;
             .inner_container {
-                div.about-left {
+                section.splide {
+                    .splide__list {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2rem;
+                    }
+                    .splide__arrows {
+                        display: none;
+                    }
+                }
+            }
+        }
+        section#access {
+            padding: unset;
+        }
+        section#clinic-hours {
+            min-height: auto;
+            padding: unset;
+        }
+        section#news {
+            min-height: auto;
+            padding: unset;
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    body.home {
+        section#main-visual {
+            .main_visual_container {
+                div.main_visual-left {
                     align-items: center;
+                    a.logo-mainvisual {
+                        left: 0;
+                    }
+                    p {
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+        section#clinic-hours {
+            div.clinic-table-wrapper {
+                overflow-y: hidden;
+                overflow-x: scroll;
+            }
+        }
+        section#about {
+            .container {
+                .inner_container {
+                    div.about-left {
+                        align-items: center;
+                    }
                 }
             }
         }

@@ -3,7 +3,7 @@
 <main class="light-mode">
     <?php get_template_part('template-parts/header-entry'); ?>
     
-    <section id="main-section">
+    <section id="information">
         <div class="container">
             <div class="inner_container">
                 <?php if (have_posts()) : ?>

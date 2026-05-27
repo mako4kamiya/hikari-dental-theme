@@ -1,10 +1,20 @@
 /* アーカイブページ共通 */
-body.archive:not(.category)  {
-    section#main-section {
+body.archive {
+    section#information {
         ul {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    body.archive {
+        section#information {
+            ul {
+                display: flex;
+                flex-direction: column;
+            }
         }
     }
 }
