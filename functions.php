@@ -56,7 +56,7 @@ add_action('wp_head', 'my_theme_add_preconnect');
 /* --------------------------------------------------------------------------
  * アイコンの読み込み
  * ----------------------------------------------------------------------- */
-require_once get_theme_file_path('/assets/icons.php');
+require_once get_theme_file_path('/assets/information-icons.php');
 require_once get_theme_file_path('/assets/notification-icons.php');
 
 
@@ -295,7 +295,7 @@ function render_information_icon_meta_box($post) {
 
     // 現在保存されているアイコンのキー名を取得
     $selected_icon = get_post_meta($post->ID, '_selected_svg_icon', true);
-    $icons = get_custom_svg_icons();
+    $icons = get_information_icons();
     
     echo '<div class="admin-icon-selector">';
 
