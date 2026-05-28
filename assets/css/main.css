@@ -511,4 +511,10 @@ div.contact-form-7 {
             height: auto;
         }
     }
+    section#clinic-hours {
+        div.clinic-table-wrapper {
+            overflow-y: hidden;
+            overflow-x: scroll;
+        }
+    }
 }

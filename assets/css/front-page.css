@@ -290,12 +290,6 @@ body.home {
                 }
             }
         }
-        section#clinic-hours {
-            div.clinic-table-wrapper {
-                overflow-y: hidden;
-                overflow-x: scroll;
-            }
-        }
         section#about {
             .container {
                 .inner_container {
