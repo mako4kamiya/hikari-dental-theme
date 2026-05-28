@@ -56,6 +56,7 @@ add_action('wp_head', 'my_theme_add_preconnect');
 /* --------------------------------------------------------------------------
  * アイコンの読み込み
  * ----------------------------------------------------------------------- */
+require_once get_theme_file_path('/assets/global-icons.php');
 require_once get_theme_file_path('/assets/information-icons.php');
 require_once get_theme_file_path('/assets/notification-icons.php');
 

@@ -167,6 +167,10 @@ input, button, textarea, select {
     border: 1px solid var(--neutral-gray);
     border-radius: 3px;
 }
+button {
+    cursor: pointer;
+}
+
 input[type="submit"] {
     background-color: var(--dark-mode-button-default);
     color: var(--dark-mode-button-text);
@@ -337,14 +341,56 @@ a.button {
     }
 }
 .notification-banner {
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-width: 3px;
+    border-style: solid;
+    background-color: var(--light-mode-background);
     &.success {
-        border: 1px solid var(--light-mode-semantic-success);
+        border-color: var(--light-mode-semantic-success);
+        svg {
+            color: var(--light-mode-semantic-success);
+        }
     }
     &.error {
-        border: 1px solid var(--light-mode-semantic-error);
+        border-color: var(--light-mode-semantic-error);
+        svg {
+            color: var(--light-mode-semantic-error);
+        }
     }
     &.warning {
-        border: 1px solid var(--light-mode-semantic-warning);
+        border-color: var(--light-mode-semantic-warning);
+        svg {
+            color: var(--light-mode-semantic-warning);
+        }
+    }
+    .banner-contents {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        .banner-title-container {
+            display: flex;
+            justify-content: space-between;
+            .banner-title {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                svg.notification-icon {
+                    width: 36px;
+                    aspect-ratio: 1;
+                }
+            }
+            button.banner-close {
+                border: unset;
+                background-color: unset;
+                display: flex;
+                align-items: center;
+                gap: 0.25rem;
+            }
+        }
+        p.banner-copy {
+            padding-left: 60px;
+        }
     }
 }
 
