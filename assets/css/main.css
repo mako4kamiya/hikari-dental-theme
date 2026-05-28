@@ -169,6 +169,7 @@ input, button, textarea, select {
 }
 button {
     cursor: pointer;
+    padding: unset;
 }
 
 input[type="submit"] {
@@ -515,6 +516,22 @@ div.contact-form-7 {
         div.clinic-table-wrapper {
             overflow-y: hidden;
             overflow-x: scroll;
+        }
+    }
+    .notification-banner {
+        padding: 1rem;
+        .banner-contents {
+            .banner-title-container {
+                .banner-title {
+                    gap: 1rem;
+                    svg.notification-icon {
+                        width: 24px;
+                    }
+                }
+            }
+            p.banner-copy {
+                padding-left: 40px;
+            }
         }
     }
 }
