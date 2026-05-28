@@ -3,7 +3,7 @@
  * テーマの機能追加・カスタマイズ
  *
  * INDEX:
- * 01. スクリプトとCSSの読み込み (Enqueues)
+ * 01. スクリプトとCSSと外部ファイルの読み込み (Enqueues)
  * 02. テーマサポート設定 (Theme Supports)
  * 03. 管理画面のカスタマイズ (Admin Customizes)
  * 04. カスタム投稿タイプの追加 (Custom Post Types)
@@ -17,7 +17,7 @@
 
 
 /* ==========================================================================
-   01. スクリプトとCSSの読み込み (Enqueues)
+   01. スクリプトとCSSと外部ファイルの読み込み (Enqueues)
    ========================================================================== */
 function my_enqueue_assets() {
 	/* --------------------------------------------------------------------------
@@ -53,7 +53,11 @@ function my_theme_add_preconnect() {
 }
 add_action('wp_head', 'my_theme_add_preconnect');
 
-
+/* --------------------------------------------------------------------------
+ * アイコンの読み込み
+ * ----------------------------------------------------------------------- */
+require_once get_theme_file_path('/assets/icons.php');
+require_once get_theme_file_path('/assets/notification-icons.php');
 
 
 
@@ -272,10 +276,7 @@ add_action( 'init', 'create_post_type_information' );
 /* --------------------------------------------------------------------------
 * 診療内容のカスタム投稿タイプにアイコン設定機能を追加
 * ----------------------------------------------------------------------- */
-// 1. アイコン定義ファイル（assets/icons.php）を読み込む
-require_once get_theme_file_path('/assets/icons.php');
-
-// 2. カスタム投稿「information」の編集画面にアイコン設定欄を追加
+// 1. カスタム投稿「information」の編集画面にアイコン設定欄を追加
 function add_information_icon_meta_box() {
     add_meta_box(
         'information_icon_box',
@@ -288,7 +289,7 @@ function add_information_icon_meta_box() {
 }
 add_action('add_meta_boxes', 'add_information_icon_meta_box');
 
-// 3. 管理画面にアイコン画像を並べて選択（ラジオボタン）させるHTMLとCSS
+// 2. 管理画面にアイコン画像を並べて選択（ラジオボタン）させるHTMLとCSS
 function render_information_icon_meta_box($post) {
     wp_nonce_field('save_information_icon_action', 'information_icon_nonce');
 
@@ -376,7 +377,7 @@ function render_information_icon_meta_box($post) {
     <?php
 }
 
-// 4. アイコンの選択データを保存
+// 3. アイコンの選択データを保存
 function save_information_icon_meta_box($post_id) {
     if (!isset($_POST['information_icon_nonce']) || !wp_verify_nonce($_POST['information_icon_nonce'], 'save_information_icon_action')) {
         return;
