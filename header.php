@@ -45,3 +45,10 @@
                 </div>
             </div>
         </header>
+<?php
+get_template_part('/template-parts/notification-banner', null, array(
+    'type'      => 'warning',
+    'title'     => 'ポートフォリオ用デモサイト',
+    'message'   =>'このウェブサイトは、ポートフォリオ制作のための架空の歯科医院のサイトです。実在する人物・団体・医療機関とは一切関係ありません。'
+));
+?>

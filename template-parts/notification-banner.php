@@ -10,8 +10,8 @@ if ( empty( $type ) || empty( $title ) || empty( $message ) ) {
 }
 ?>
 
-<div class="notification-banner <?php echo esc_attr( $type ); ?>" role="alert">
-    <div class="banner-contents">
+<div class="notification-banner" role="alert">
+    <div class="banner-contents <?php echo esc_attr( $type ); ?>">
         <div class="banner-title-container">
             <div class="banner-title">
                 <?php echo $icons[$type]; ?>
