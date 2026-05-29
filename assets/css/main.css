@@ -341,17 +341,16 @@ a.button {
         background-color: var(--light-mode-card-hover);
     }
 }
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
 .notification-banner {
-    animation: fadeIn 1s;
+    transition: all 1s ease;
+    &.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+    &:not(.hidden) {
+        opacity: 1;
+        visibility: visible;
+    }
     width: 100%;
     height: 100svh;
     position: fixed;
