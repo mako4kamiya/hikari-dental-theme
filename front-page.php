@@ -93,7 +93,7 @@
                                     <?php
                                     $saved_icon_key = get_post_meta(get_the_ID(), '_selected_svg_icon', true);
                                     if ( $saved_icon_key ) {
-                                        // 2. assets/information-icons.php からアイコン一覧を呼び出し
+                                        // 2. assets/icons/information-icons.php からアイコン一覧を呼び出し
                                         $icons = get_information_icons();
 
                                         // 3. 該当するSVGコードがあればクラス付きのdivで出力
