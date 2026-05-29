@@ -543,6 +543,7 @@ div.contact-form-7 {
     .notification-banner {
         padding: 1rem;
         .banner-contents {
+            padding: 1rem;
             .banner-title-container {
                 .banner-title {
                     gap: 1rem;
