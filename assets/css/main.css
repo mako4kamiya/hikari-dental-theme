@@ -363,7 +363,7 @@ a.button {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 100;
+    z-index: 1000;
     .banner-contents {
         padding: 1.5rem;
         border-radius: 10px;
